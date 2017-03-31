@@ -1,0 +1,54 @@
+html, body {
+	font-family: 'Share Tech Mono', sans-serif;
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+.header {
+	width: 600px;
+}
+
+h1 {
+	margin: 0px;
+	font-size: 40px;
+}
+
+.container {
+	align: center;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+	color: #d40008;
+	background-color: black;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+
+table {
+	width: auto;
+	font-size: 35px;
+}
+
+.item {
+	width: 20%;
+}
+
+td {
+	text-align: right;
+	padding: 5px;
+}
+
+.footer {
+	text-align: right;
+	color: darkred;
+	font-size: 10px;
+}
