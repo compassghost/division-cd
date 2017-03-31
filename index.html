@@ -81,11 +81,11 @@ td {
 
 // Update the count down every 1 second
 setInterval(function() {createTimer("dailies", getNextUTC())}, 1000);
-setInterval(function() {createTimer("weeklies", getNextDay(0))}, 1000);
-setInterval(function() {createTimer("vendors", getNextDay(5))}, 1000);
-setInterval(function() {createTimer("heroics", getNextDay(5))}, 1000);
-setInterval(function() {createTimer("legendaries", getNextDay(5))}, 1000);
-setInterval(function() {createTimer("hvts", getNextDay(1))}, 1000);
+setInterval(function() {createTimer("weeklies", getNextDay(1))}, 1000);
+setInterval(function() {createTimer("vendors", getNextDay(6))}, 1000);
+setInterval(function() {createTimer("heroics", getNextDay(6))}, 1000);
+setInterval(function() {createTimer("legendaries", getNextDay(6))}, 1000);
+setInterval(function() {createTimer("hvts", getNextDay(2))}, 1000);
 
 function pad(n, width, z) {
   z = z || '0';
@@ -131,8 +131,6 @@ function getNextUTC() {
 }
 
 function getNextDay(dayOfWeek) {
-	if(dayOfWeek < 0 || dayOfWeek > 6) 
-		throw "Invalid Time";
 	var target = getNextUTC();
 	
 	while(target.getUTCDay() != dayOfWeek) {
