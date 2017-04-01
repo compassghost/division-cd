@@ -5,10 +5,12 @@
 window.onload = function() {
 	setInterval(function() {createTimer("dailies", getNextUTC())}, 1000);
 	setInterval(function() {createTimer("weeklies", getNextDay(1))}, 1000);
-	setInterval(function() {createTimer("vendors", getNextDay(6))}, 1000);
-	setInterval(function() {createTimer("heroics", getNextDay(6))}, 1000);
-	setInterval(function() {createTimer("legendaries", getNextDay(6))}, 1000);
 	setInterval(function() {createTimer("hvts", getNextDay(2))}, 1000);
+	setInterval(function() {createTimer("vendors", getNextDay(6))}, 1000);
+	setInterval(function() {createTimer("incursions", getNextDay(6))}, 1000);
+	setInterval(function() {createTimer("dzweeklies", getNextDay(0))}, 1000);
+	setInterval(function() {createTimer("dzmonthlies", getNextMonth())}, 1000);
+
 }
 
 function pad(n, width, z) {
@@ -51,6 +53,18 @@ function getNextUTC() {
 	if(new Date() > target) {
 		target.setUTCDate(target.getUTCDate() + 1)
 	}
+	return target;
+}
+
+function getNextMonth() {
+	var target = new Date();
+	
+	target.setUTCDate(1)
+	target.setUTCHours(0);
+	target.setMinutes(0);
+	target.setSeconds(0);
+	target.setMilliseconds(0);
+	target.setUTCMonth(target.getUTCMonth() + 1);
 	return target;
 }
 
