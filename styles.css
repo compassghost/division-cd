@@ -9,7 +9,14 @@ html {
 }
 
 .header {
+	background-image: url("watchface.png");
+	background-position: center; 
+	background-repeat: no-repeat;
+    display: table; 
 	width: 600px;
+	height: 200px;
+	-webkit-animation: blink 4s ease-out;
+    -webkit-animation-iteration-count: infinite; 
 }
 
 h1 {
@@ -21,10 +28,25 @@ h1 {
 	align: center;
 }
 
+@-webkit-keyframes blink {
+    0% {-webkit-filter: brightness(100%);}
+    50% {-webkit-filter: brightness(150%);}
+    100% {-webkit-filter:  brightness(100%);}
+}
+
+.watch {
+	text-align:center; 
+    vertical-align: middle;
+    display: table-cell;  
+	font-size: 30px;
+    opacity: 0.4
+	color: orange;
+}
+
 body {
     display: table-cell;
     vertical-align: middle;
-	color: #d40008;
+	color: darkorange;
 	background-color: black;
 }
 
@@ -44,11 +66,12 @@ table {
 
 td {
 	text-align: right;
-	padding: 5px;
+	padding-top: 5px;
 }
 
 .footer {
 	text-align: right;
-	color: darkred;
+	color: darkorange;
+	padding-right: 5px;
 	font-size: 10px;
 }

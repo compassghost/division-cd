@@ -10,7 +10,7 @@ window.onload = function() {
 	setInterval(function() {createTimer("incursions", getNextDay(6))}, 1000);
 	setInterval(function() {createTimer("dzweeklies", getNextDay(0))}, 1000);
 	setInterval(function() {createTimer("dzmonthlies", getNextMonth())}, 1000);
-
+	setInterval(function() {createWatch("watch")}, 1000);
 }
 
 function pad(n, width, z) {
@@ -32,14 +32,23 @@ function createTimer(timerId, targetDay) {
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-  
 
   // Display the result in the element with id="demo"
   document.getElementById(timerId).innerHTML = pad(days, 2) + "d " + pad(hours, 2) + "h "
   + pad(minutes, 2) + "m " + pad(seconds, 2) + "s ";
 
-  // If the count down is finished, write some text
+}
+
+function createWatch(timerId) {
+  // Get todays date and time
+  var now = new Date();
+
+  // Find the distance between now an the count down date
+
+  // Display the result in the element with id="demo"
+  document.getElementById(timerId).innerHTML = "" + pad(now.getHours(), 2) + ":"
+  + pad(now.getMinutes(), 2) + ":" + pad(now.getSeconds(), 2);
+
 }
 
 function getNextUTC() {
