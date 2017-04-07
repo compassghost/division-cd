@@ -7,6 +7,7 @@ window.onload = function() {
 	setInterval(function() {createTimer("weeklies", getNextDay(1))}, 1000);
 	setInterval(function() {createTimer("hvts", getNextDay(2))}, 1000);
 	setInterval(function() {createTimer("vendors", getNextDay(6))}, 1000);
+	setInterval(function() {createTimer("premiums", getNextDayPremium())}, 1000);
 	setInterval(function() {createTimer("incursions", getNextDay(6))}, 1000);
 	setInterval(function() {createTimer("dzweeklies", getNextDay(0))}, 1000);
 	setInterval(function() {createTimer("dzmonthlies", getNextMonth())}, 1000);
@@ -75,6 +76,12 @@ function getNextMonth() {
 	target.setMilliseconds(0);
 	target.setUTCMonth(target.getUTCMonth() + 1);
 	return target;
+}
+
+function getNextDayPremium() {
+	var date = getNextDay(4);
+	date.setUTCHours(9);
+	return date;
 }
 
 function getNextDay(dayOfWeek) {
