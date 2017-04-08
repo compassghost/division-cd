@@ -57,7 +57,7 @@ function getNextUTC() {
 		
 	target.setUTCHours(0);
 	target.setMinutes(0);
-	target.setSeconds(0);
+	target.setSeconds(1);
 	target.setMilliseconds(0);
 
 	if(new Date() > target) {
@@ -72,7 +72,7 @@ function getNextMonth() {
 	target.setUTCDate(1)
 	target.setUTCHours(0);
 	target.setMinutes(0);
-	target.setSeconds(0);
+	target.setSeconds(1);
 	target.setMilliseconds(0);
 	target.setUTCMonth(target.getUTCMonth() + 1);
 	return target;
