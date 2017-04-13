@@ -3,61 +3,23 @@ html, body {
     height: 100%;
 }
 body {
-	-webkit-animation: phaseIn 1.3s ease-in;
+    display: table-cell;
+    vertical-align: middle;
+	color: darkorange;
+	background-color: black;
+	-webkit-animation: phaseIn 1.3s ease-in;	
 }
+
+@-webkit-keyframes phaseIn {
+    0% {-webkit-filter: brightness(0%);}
+    70% {-webkit-filter: brightness(0%);}
+    100% {-webkit-filter: brightness(100%);}
+}
+
 
 html {
     display: table;
     margin: auto;
-}
-
-.outer_header {
-	perspective: 600px;
-    display: table; 
-	width: 600px;
-	height: 200px;
-	-webkit-animation: glow 1s ease-in-out, rotateY 4s ease-in-out;
-    -webkit-animation-iteration-count: infinite; 
-	-webkit-animation-direction: alternate;
-}
-
-.header {
-	background-image: url("watchface.png");
-	background-position: center; 
-	background-repeat: no-repeat;
-	background-size: 200px 200px;
-	width: 100%;
-	height: 100%;
-	text-align:center; 
-    vertical-align: middle;
-	display: table; 
-	-webkit-animation: rotateX 3s ease-in-out;
-    -webkit-animation-iteration-count: infinite;
-	-webkit-animation-direction: alternate;
-}
-
-.inner_header {
-	width: 100%;
-	height: 100%;
-	text-align:center; 
-    vertical-align: middle;
-	display: table; 
-	-webkit-animation: shiftY 3s ease-in-out;
-    -webkit-animation-iteration-count: infinite; 
-	-webkit-animation-direction: alternate;
-}
-
-.watch {
-	text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
-	text-align:center; 
-    vertical-align: middle;
-    display: table-cell;  
-	font-size: 30px;
-    opacity: 1
-	color: lightorange;
-	-webkit-animation: shiftX 4s ease-in-out;
-    -webkit-animation-iteration-count: infinite; 
-	-webkit-animation-direction: alternate;
 }
 
 
@@ -70,44 +32,6 @@ h1 {
 	align: center;
 }
 
-@-webkit-keyframes glow {
-    0% {-webkit-filter: brightness(120%);}
-    100% {-webkit-filter: brightness(180%);}
-}
-
-@-webkit-keyframes rotateY {
-	0% {-webkit-transform: rotateY(-20deg);}
-    100% {-webkit-transform: rotateY(20deg);}
-}
-
-@-webkit-keyframes shiftX {
-    0% {-webkit-transform: translateX(30px);}
-    100% {-webkit-transform: translateX(-30px);}
-}
-
-@-webkit-keyframes rotateX {
-	0% {-webkit-transform: rotateX(0deg);}
-    100% {-webkit-transform: rotateX(10deg);}
-}
-
-@-webkit-keyframes shiftY {
-    0% {-webkit-transform: translateY(0px);}
-    100% {-webkit-transform: translateY(-10px);}
-}
-
-@-webkit-keyframes phaseIn {
-    0% {-webkit-filter: brightness(0%);}
-    50% {-webkit-filter: brightness(0%);}
-    100% {-webkit-filter: brightness(100%);}
-}
-
-
-body {
-    display: table-cell;
-    vertical-align: middle;
-	color: darkorange;
-	background-color: black;
-}
 
 img.center {
     display: block;

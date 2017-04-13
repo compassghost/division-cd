@@ -1,19 +1,3 @@
-// Set the date we're counting down to
-
-// Update the count down every 1 second
-
-window.onload = function() {
-	setInterval(function() {createTimer("dailies", getNextUTC())}, 1000);
-	setInterval(function() {createTimer("weeklies", getNextDay(1))}, 1000);
-	setInterval(function() {createTimer("hvts", getNextDay(5))}, 1000);
-	setInterval(function() {createTimer("vendors", getNextDay(6))}, 1000);
-	setInterval(function() {createTimer("incursions", getNextDay(6))}, 1000);
-	setInterval(function() {createTimer("premiums", getNextDayPremium())}, 1000);
-	setInterval(function() {createTimer("dzweeklies", getNextDay(0))}, 1000);
-	setInterval(function() {createTimer("dzmonthlies", getNextMonth())}, 1000);
-	setInterval(function() {createWatch("watch")}, 1000);
-}
-
 function pad(n, width, z) {
   z = z || '0';
   n = n + '';
@@ -49,7 +33,6 @@ function createWatch(timerId) {
   // Display the result in the element with id="demo"
   document.getElementById(timerId).innerHTML = "" + pad(now.getHours(), 2) + ":"
   + pad(now.getMinutes(), 2) + ":" + pad(now.getSeconds(), 2);
-
 }
 
 function getNextUTC() {

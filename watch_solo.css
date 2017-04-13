@@ -1,0 +1,13 @@
+.outer_header {
+	width: 800px !important;
+	height: 800px !important;
+}
+
+.header {
+	background-size: 600px 600px;
+}
+
+.watch {
+	font-size: 90px;
+
+}

@@ -1,0 +1,44 @@
+.outer_header {
+	-webkit-animation: glow 1s ease-in-out, rotateY 4s ease-in-out;
+    -webkit-animation-iteration-count: infinite; 
+	-webkit-animation-direction: alternate;
+}
+
+.header {
+	-webkit-animation: rotateX 3s ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+}
+
+.inner_header {
+	-webkit-animation: shiftY 3s ease-in-out;
+    -webkit-animation-iteration-count: infinite; 
+	-webkit-animation-direction: alternate;
+}
+
+.watch {
+	-webkit-animation: shiftX 4s ease-in-out;
+    -webkit-animation-iteration-count: infinite; 
+	-webkit-animation-direction: alternate;
+}
+
+
+@-webkit-keyframes rotateX {
+	0% {-webkit-transform: rotateX(0deg);}
+    100% {-webkit-transform: rotateX(10deg);}
+}
+
+@-webkit-keyframes shiftY {
+    0% {-webkit-transform: translateY(0px);}
+    100% {-webkit-transform: translateY(-30px);}
+}
+
+@-webkit-keyframes rotateY {
+	0% {-webkit-transform: rotateY(-20deg);}
+    100% {-webkit-transform: rotateY(20deg);}
+}
+
+@-webkit-keyframes shiftX {
+    0% {-webkit-transform: translateX(-70px);}
+    100% {-webkit-transform: translateX(70px);}
+}

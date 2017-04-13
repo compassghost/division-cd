@@ -1,8 +1,24 @@
 <html>
-<title>Division CD</title>
+<title>Division Reset Timers</title>
 <link href='https://fonts.googleapis.com/css?family=Share Tech Mono' rel='stylesheet' type='text/css'/>
 <link href="styles.css" rel="stylesheet" type='text/css'/>
+<link href="watch.css" rel="stylesheet" type='text/css'/>
 <script src="script.js"></script>
+<script>
+	window.onload = function() {
+		setInterval(function() {createTimer("dailies", getNextUTC())}, 1000);
+		setInterval(function() {createTimer("weeklies", getNextDay(1))}, 1000);
+		setInterval(function() {createTimer("hvts", getNextDay(5))}, 1000);
+		setInterval(function() {createTimer("vendors", getNextDay(6))}, 1000);
+		setInterval(function() {createTimer("incursions", getNextDay(6))}, 1000);
+		setInterval(function() {createTimer("premiums", getNextDayPremium())}, 1000);
+		setInterval(function() {createTimer("dzweeklies", getNextDay(0))}, 1000);
+		setInterval(function() {createTimer("dzmonthlies", getNextMonth())}, 1000);
+		setInterval(function() {createWatch("watch")}, 1000);
+	};
+	
+
+</script>
 
 <body id="body">
 
