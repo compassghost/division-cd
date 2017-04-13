@@ -9,7 +9,7 @@
 }
 
 .header {
-	background-image: url("watchface.png");
+	background-image: url("../images/watchface.png");
 	background-position: center; 
 	background-repeat: no-repeat;
 	background-size: 200px 200px;
