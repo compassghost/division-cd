@@ -81,6 +81,11 @@ function getNextMonth() {
 function getNextDayPremium() {
 	var date = getNextDay(5);
 	date.setUTCHours(-24+9);
+	
+	if(date.getTime() < new Date().getTime()) {
+		date = getNextDay(4);
+		date.setUTCHours(9);
+	}
 	return date;
 }
 
