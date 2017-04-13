@@ -5,10 +5,10 @@
 window.onload = function() {
 	setInterval(function() {createTimer("dailies", getNextUTC())}, 1000);
 	setInterval(function() {createTimer("weeklies", getNextDay(1))}, 1000);
-	setInterval(function() {createTimer("hvts", getNextDay(2))}, 1000);
+	setInterval(function() {createTimer("hvts", getNextDay(5))}, 1000);
 	setInterval(function() {createTimer("vendors", getNextDay(6))}, 1000);
-	setInterval(function() {createTimer("premiums", getNextDayPremium())}, 1000);
 	setInterval(function() {createTimer("incursions", getNextDay(6))}, 1000);
+	setInterval(function() {createTimer("premiums", getNextDayPremium())}, 1000);
 	setInterval(function() {createTimer("dzweeklies", getNextDay(0))}, 1000);
 	setInterval(function() {createTimer("dzmonthlies", getNextMonth())}, 1000);
 	setInterval(function() {createWatch("watch")}, 1000);
@@ -79,8 +79,8 @@ function getNextMonth() {
 }
 
 function getNextDayPremium() {
-	var date = getNextDay(4);
-	date.setUTCHours(9);
+	var date = getNextDay(5);
+	date.setUTCHours(-24+9);
 	return date;
 }
 
