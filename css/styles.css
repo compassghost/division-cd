@@ -3,11 +3,12 @@ html, body {
     height: 100%;
 }
 body {
+	text-align: center;
     display: table-cell;
     vertical-align: middle;
 	color: darkorange;
 	background-color: black;
-	-webkit-animation: phaseIn 1.3s ease-in;	
+	-webkit-animation: phaseIn 1.3s ease-in;
 }
 
 @-webkit-keyframes phaseIn {
@@ -16,6 +17,13 @@ body {
     100% {-webkit-filter: brightness(100%);}
 }
 
+a {
+	color: orange;
+}
+
+.event {
+	font-size: 25px;
+}
 
 html {
     display: table;
