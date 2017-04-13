@@ -2,6 +2,9 @@ html, body {
 	font-family: 'Share Tech Mono', sans-serif;
     height: 100%;
 }
+body {
+	-webkit-animation: phaseIn 1.3s ease-in;
+}
 
 html {
     display: table;
@@ -13,8 +16,9 @@ html {
     display: table; 
 	width: 600px;
 	height: 200px;
-	-webkit-animation: glow 4s ease-in-out, rotateY 7s ease-in-out;
+	-webkit-animation: glow 1s ease-in-out, rotateY 4s ease-in-out;
     -webkit-animation-iteration-count: infinite; 
+	-webkit-animation-direction: alternate;
 }
 
 .header {
@@ -27,8 +31,9 @@ html {
 	text-align:center; 
     vertical-align: middle;
 	display: table; 
-	-webkit-animation: rotateX 5s ease-in-out;
-    -webkit-animation-iteration-count: infinite; 
+	-webkit-animation: rotateX 3s ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
 }
 
 .inner_header {
@@ -37,8 +42,9 @@ html {
 	text-align:center; 
     vertical-align: middle;
 	display: table; 
-	-webkit-animation: shiftY 5s ease-in-out;
+	-webkit-animation: shiftY 3s ease-in-out;
     -webkit-animation-iteration-count: infinite; 
+	-webkit-animation-direction: alternate;
 }
 
 .watch {
@@ -49,8 +55,9 @@ html {
 	font-size: 30px;
     opacity: 1
 	color: lightorange;
-	-webkit-animation: glow 5s ease-in-out, shiftX 7s ease-in-out;
+	-webkit-animation: shiftX 4s ease-in-out;
     -webkit-animation-iteration-count: infinite; 
+	-webkit-animation-direction: alternate;
 }
 
 
@@ -65,40 +72,33 @@ h1 {
 
 @-webkit-keyframes glow {
     0% {-webkit-filter: brightness(120%);}
-    50% {-webkit-filter: brightness(180%);}
-    100% {-webkit-filter:  brightness(120%);}
+    100% {-webkit-filter: brightness(180%);}
 }
 
 @-webkit-keyframes rotateY {
-    0% {-webkit-transform: rotateY(0deg);}
-    25% {-webkit-transform: rotateY(15deg);}
-    50% {-webkit-transform: rotateY(0deg);}
-	75% {-webkit-transform: rotateY(-15deg);}
-    100% {-webkit-transform:  rotateY(0deg);}
+	0% {-webkit-transform: rotateY(-20deg);}
+    100% {-webkit-transform: rotateY(20deg);}
 }
 
 @-webkit-keyframes shiftX {
-    0% {-webkit-transform: translateX(0px);}
-    25% {-webkit-transform: translateX(15px);}
-    50% {-webkit-transform: translateX(0px);}
-    75% {-webkit-transform: translateX(-15px);}
-    100% {-webkit-transform: translateX(0px);}
+    0% {-webkit-transform: translateX(30px);}
+    100% {-webkit-transform: translateX(-30px);}
 }
 
 @-webkit-keyframes rotateX {
-    0% {-webkit-transform: rotateX(0deg);}
-    25% {-webkit-transform: rotateX(15deg);}
-    50% {-webkit-transform: rotateX(0deg);}
-	75% {-webkit-transform: rotateX(-15deg);}
-    100% {-webkit-transform:  rotateX(0deg);}
+	0% {-webkit-transform: rotateX(0deg);}
+    100% {-webkit-transform: rotateX(10deg);}
 }
 
 @-webkit-keyframes shiftY {
     0% {-webkit-transform: translateY(0px);}
-    25% {-webkit-transform: translateY(15px);}
-    50% {-webkit-transform: translateY(0px);}
-    75% {-webkit-transform: translateY(-15px);}
-    100% {-webkit-transform: translateY(0px);}
+    100% {-webkit-transform: translateY(-10px);}
+}
+
+@-webkit-keyframes phaseIn {
+    0% {-webkit-filter: brightness(0%);}
+    50% {-webkit-filter: brightness(0%);}
+    100% {-webkit-filter: brightness(100%);}
 }
 
 
