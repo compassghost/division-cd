@@ -21,6 +21,10 @@ a {
 	color: orange;
 }
 
+a:visited {
+	color: red;
+}
+
 .event {
 	font-size: 25px;
 }
