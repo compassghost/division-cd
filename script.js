@@ -4,7 +4,10 @@ function pad(n, width, z) {
   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
-function createTimer(timerId, targetDay) {
+function createTimer(timerId, targetDay, prefix) {
+  if(prefix === undefined)  {
+	  prefix = "";
+  }
 
   // Get todays date and time
   var now = new Date().getTime();
@@ -19,7 +22,7 @@ function createTimer(timerId, targetDay) {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById(timerId).innerHTML = pad(days, 2) + "d " + pad(hours, 2) + "h "
+  document.getElementById(timerId).innerHTML = prefix + pad(days, 2) + "d " + pad(hours, 2) + "h "
   + pad(minutes, 2) + "m " + pad(seconds, 2) + "s ";
 
 }

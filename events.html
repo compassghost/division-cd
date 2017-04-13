@@ -1,0 +1,40 @@
+<html>
+<title>Division Reset Timers</title>
+<link href='https://fonts.googleapis.com/css?family=Share Tech Mono' rel='stylesheet' type='text/css'/>
+<link href="styles.css" rel="stylesheet" type='text/css'/>
+<script src="script.js"></script>
+<script src="events.js"></script>
+<script>
+	window.onload = function() {
+		setInterval(function() {
+			createEventTimer(
+				"Bonus Boss Loot",
+				"bosses", 
+				createUTCDate(2017, 04, 14, 9), 
+				createUTCDate(2017, 04, 16, 9)
+			)}, 1000);
+		setInterval(function() {
+			createEventTimer(
+				"Double Prof. Caches",
+				"caches", 
+				createUTCDate(2017, 04, 16, 9), 
+				createUTCDate(2017, 04, 18, 9)
+			)}, 1000);
+	};
+	
+
+</script>
+
+<body id="body">
+
+<div class="container">
+<table>
+	<tr><td id="bosses"/></tr>
+	<tr><td id="caches"/></tr>
+</table>
+</div>
+
+<div class="footer">Created by compassghost, 2017 Source code <a href="https://github.com/compassghost/division-cd">here</a>.</div>
+
+</body>
+</html>

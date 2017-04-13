@@ -1,7 +1,7 @@
 .outer_header {
 	perspective: 600px;
     display: table; 
-	width: 600px;
+	width: 700px;
 	height: 200px;
 	-webkit-animation: glow 1s ease-in-out;
 	-webkit-animation-iteration-count: infinite; 
