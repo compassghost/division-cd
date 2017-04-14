@@ -8,7 +8,7 @@ body {
     vertical-align: middle;
 	color: darkorange;
 	background-color: black;
-	-webkit-animation: phaseIn 1.3s ease-in;
+	-webkit-animation: phaseIn 2s ease-in;
 }
 
 @-webkit-keyframes phaseIn {
