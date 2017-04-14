@@ -4,6 +4,7 @@ function createUTCDate(year, month, day, hour) {
 	date.setUTCMonth(month - 1);
 	date.setUTCDate(day);
 	date.setUTCHours(hour);
+	date.setUTCMinutes(0);
 	date.setUTCSeconds(0);
 	date.setUTCMilliseconds(0);
 	
