@@ -34,7 +34,7 @@ function createWatch(timerId) {
   // Find the distance between now an the count down date
 
   // Display the result in the element with id="demo"
-  document.getElementById(timerId).innerHTML = "" + pad(now.getHours(), 2) + ":"
+  document.getElementById(timerId).innerHTML = "" + pad(now.getUTCHours(), 2) + ":"
   + pad(now.getMinutes(), 2) + ":" + pad(now.getSeconds(), 2);
 }
 
