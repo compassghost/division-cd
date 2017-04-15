@@ -19,6 +19,7 @@ body {
 }
 
 .watch {
+	text-shadow: 0px 0px 15px #FFA500, -4px -4px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000, 4px 4px 0 #000 !important;
 	font-size: 90px;
 }
 
