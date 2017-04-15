@@ -31,22 +31,25 @@ window.onload = function() {
 		var scaleX = (event.pageX - midX) / midX;
 		var scaleY = (event.pageY - midY) / midY;
 		
-		var transX = Math.round(scaleX * 110);
+		var transX = Math.round(scaleX * 370);
 		var transY = Math.round(scaleY * 150);
-		var rotY = Math.round(scaleX * 30);
-		var rotX = Math.round(scaleY * 40);
+		var transShadowX = Math.round(transX / 2 * -1);
+		var transShadowY = Math.round(transY / 2 * -1);
+		var rotY = Math.round(scaleX * 40);
+		var rotX = Math.round(scaleY * 20);
 		
 		transX = 'translateX(' + transX + 'px)';
 		transY = 'translateY(' + transY + 'px)';
+		var transShadow = 'translate(' + transShadowX + 'px, ' + transShadowY + 'px)';
+		console.log(transShadow);
 		rotX = 'rotateX(' + rotX + 'deg)';
 		rotY = 'rotateY(' + rotY + 'deg)';
-		
-		console.log(rotY);
-		
-		document.getElementById('inner_header').style.transform = transY;
-		document.getElementById('watch').style.transform = transX;
+				
 		document.getElementById('outer_header').style.transform = rotY;
 		document.getElementById('header').style.transform = rotX;
+		document.getElementById('inner_header').style.transform = transY;
+		document.getElementById('shadow').style.transform = transShadow;
+		document.getElementById('watch').style.transform = transX;
 	}
 	})();
 };

@@ -1,6 +1,17 @@
+body {
+	cursor: none; 
+	perspective: 600px;
+	width: 100% !important;
+	width: 100vw !important;
+	height: 100% !important;
+	height: 100vh !important;
+	overflow: hidden;
+	-webkit-animation: phaseIn 2.5s ease-in !important;
+}
+
 .outer_header {
-	width: 800px !important;
-	height: 800px !important;
+	width: 100% !important;
+	height: 100% !important;
 }
 
 .header {
@@ -9,5 +20,16 @@
 
 .watch {
 	font-size: 90px;
+}
 
+.shadow {
+	width: 100%;
+	height: 100%;
+	display: table; 
+	text-align:center; 
+    vertical-align: middle;
+	background-image: url("../images/shadow.png");
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: 1000px 1000px;
 }
