@@ -32,7 +32,7 @@ window.onload = function() {
 		var scaleY = (event.pageY - midY) / midY;
 		
 		var transX = Math.round(scaleX * 370);
-		var transY = Math.round(scaleY * 150);
+		var transY = Math.round(scaleY * -150);
 		var transShadowX = Math.round(transX / 2 * -1);
 		var transShadowY = Math.round(transY / 2 * -1);
 		var rotY = Math.round(scaleX * 40);
