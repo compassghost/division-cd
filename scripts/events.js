@@ -12,15 +12,13 @@ function createUTCDate(year, month, day, hour) {
 }
 
 function createEventTimer(itemName, timerId, startDay, endDay) {
-	console.log(startDay);
 	if(startDay.getTime() > new Date().getTime()) {
 		createTimer(timerId, startDay, itemName + " &nbsp;&nbsp;&nbsp;begins in ");
 	}
 	else if(endDay.getTime() > new Date().getTime()) {
-		createTimer(timerId, endDay, itemName + " &nbsp;&nbsp;&nbsp;ends in ");
+		createTimer(timerId, endDay, itemName + " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ends in ");
 	}
 	else {
-		document.getElementById(timerId).innerHTML = "Event has ended.";
 	}
 
 
