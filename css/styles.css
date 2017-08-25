@@ -7,6 +7,11 @@ body {
     display: table-cell;
     vertical-align: middle;
 	color: darkorange;
+	background-image: url("../images/wp.png");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+	background-size:100%;
+    background-position: center; 
 	background-color: black;
 	-webkit-animation: phaseIn 2s ease-in;
 }
