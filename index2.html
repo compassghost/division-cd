@@ -1,0 +1,51 @@
+<html>
+<title>Division Reset Timers</title>
+<link href='https://fonts.googleapis.com/css?family=Share Tech Mono' rel='stylesheet' type='text/css'/>
+<link href="css/styles.css" rel="stylesheet" type='text/css'/>
+<link href="css/watch.css" rel="stylesheet" type='text/css'/>
+<script src="scripts/script.js"></script>
+<script>
+	window.onload = function() {
+		setInterval(function() {createTimer("dailies", getNextUTC(), "Daily Missions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")}, 1000);
+		setInterval(function() {createTimer("weeklies", getNextDay(1), "Weekly Assignments &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")}, 1000);
+		setInterval(function() {createTimer("hvts", getNextDay(5), "High Value Targets &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")}, 1000);
+		setInterval(function() {createTimer("vendors", getNextDay(6), "Vendors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")}, 1000);
+		setInterval(function() {createTimer("incursions", getNextDay(6), "Incursions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")}, 1000);
+		setInterval(function() {createTimer("premiums", getNextDayPremium(), "Premium Vendor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")}, 1000);
+		setInterval(function() {createTimer("dzweeklies", getNextDay(0), "DZ Weeklies &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")}, 1000);
+		setInterval(function() {createTimer("dzmonthlies", getNextMonth(), "DZ Monthlies &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")}, 1000);
+		setInterval(function() {createWatch("watch")}, 1000);
+	};
+	
+
+</script>
+
+<body id="body">
+<div class="background">
+	<iframe src='https://www.gfycat.com/ifr/ImportantTangibleBarasinga' frameborder='0' scrolling='no' width='100%' height='100%'></iframe>
+</div>
+<div class="outer_header">
+	<div class="header">
+		<div class="inner_header">
+		<p class="watch" id="watch"></p>
+		</div>
+	</div>
+</div>
+<div class="container">
+<table>
+	<tr><td id="dailies"/></tr>
+	<tr><td id="weeklies"/></tr>
+	<tr><td id="hvts"/></tr>
+	<tr><td id="vendors"/></tr>
+	<tr><td id="incursions"/></tr>
+	<tr><td id="premiums"/></tr>
+	<tr><td id="dzweeklies"/></tr>
+	<tr><td id="dzmonthlies"/></tr>
+	<tr><td colspan=2 style="text-align: center;"><a class='event' href="events/">Division Event Timers</a></td></tr>
+</table>
+</div>
+
+<div class="footer">Created by compassghost, 2017 Source code <a href="https://github.com/compassghost/division-cd">here</a>.</div>
+
+</body>
+</html>

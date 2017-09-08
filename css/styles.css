@@ -16,6 +16,15 @@ body {
 	-webkit-animation: phaseIn 2s ease-in;
 }
 
+.background {
+	z-index: -99999999999;
+	position: absolute;
+    top: 0;
+    left: 0;
+	height: 100vh;
+	width: 100vw;
+}
+
 @-webkit-keyframes phaseIn {
     0% {-webkit-filter: brightness(0%);}
     70% {-webkit-filter: brightness(0%);}
