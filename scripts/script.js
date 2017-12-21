@@ -4,9 +4,22 @@ function pad(n, width, z) {
   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
+var padding = textPad(10);
+
+function textPad(count) {
+	var pad = "";
+	for(i = 0; i < count; i++) {
+		pad += "&nbsp;";
+	}
+	return pad;
+}
+
 function createTimer(timerId, targetDay, prefix) {
   if(prefix === undefined)  {
 	  prefix = "";
+  }
+  else {
+	  prefix += padding;
   }
 
   // Get todays date and time
