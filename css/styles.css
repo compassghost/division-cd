@@ -12,9 +12,9 @@ body {
     background-attachment: fixed;
 	background-size:100%;
     background-position: center; 
-	background-color: black;
 	-webkit-animation: phaseIn 2s ease-in;
 }
+
 .cover {
 	z-index: -99999;
 	position: absolute;
@@ -44,9 +44,9 @@ body {
 }
 
 @-webkit-keyframes phaseIn {
-    0% {-webkit-filter: brightness(0%);}
-    70% {-webkit-filter: brightness(0%);}
-    100% {-webkit-filter: brightness(100%);}
+    0% {-webkit-filter: brightness(0%); opacity: 0%;}
+    70% {-webkit-filter: brightness(0%); opacity: 0%;}
+    100% {-webkit-filter: brightness(100%) opacity: 100%; }
 }
 
 a {
@@ -73,7 +73,17 @@ h1 {
 }
 
 .container {
+	background-color: rgba(0,0,0,.87);
+
+	-webkit-animation: transparentBG 2s ease-in;
+	border-radius: 20px;
 	align: center;
+}
+
+@-webkit-keyframes transparentBG {
+    0% {background-color: rgba(0,0,0,0);}
+    70% {background-color: rgba(0,0,0,0);}
+    100% {background-color: rgba(0,0,0,.87);}
 }
 
 
@@ -101,4 +111,5 @@ td {
 	color: darkorange;
 	padding-right: 5px;
 	font-size: 10px;
+	text-shadow: none;
 }
