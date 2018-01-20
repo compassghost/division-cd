@@ -14,6 +14,7 @@
 	background-position: center; 
 	background-repeat: no-repeat;
 	background-size: 200px 200px;
+	text-shadow: 0px 0px 20px #FFA500, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 	width: 200px;
     margin: 0 auto;
 	border-radius: 200px;
@@ -21,8 +22,7 @@
 	text-align:center; 
     vertical-align: middle;
 	display: table; 
-	-webkit-animation: transparentBG 2s ease-in;
-
+	-webkit-animation: transparentBGandImage 2s ease-in;
 }
 @-webkit-keyframes phaseInWatch {
     0% {-webkit-filter: brightness(0%); opacity: 0%;}
@@ -30,6 +30,11 @@
     100% {-webkit-filter: brightness(100%) opacity: 100%; }
 }
 
+@-webkit-keyframes transparentBGandImage {
+    0% {background-color: rgba(0,0,0,0);background-image: none;text-shadow: none;}
+    70% {background-color: rgba(0,0,0,0);background-image: none;text-shadow: none;}
+    100% {background-color: rgba(0,0,0,.87);background-image: url("../images/watchface.png");	text-shadow: 0px 0px 20px #FFA500, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;}
+}
 
 .inner_header {
 	width: 100%;
@@ -41,7 +46,6 @@
 
 .watch {
 	cursor: none; 
-	text-shadow: 0px 0px 20px #FFA500, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 	text-align:center; 
     vertical-align: middle;
     display: table-cell;  

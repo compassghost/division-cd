@@ -44,9 +44,9 @@ body {
 }
 
 @-webkit-keyframes phaseIn {
-    0% {-webkit-filter: brightness(0%); opacity: 0%;}
-    70% {-webkit-filter: brightness(0%); opacity: 0%;}
-    100% {-webkit-filter: brightness(100%) opacity: 100%; }
+    0% {-webkit-filter: brightness(0%); opacity: 0%; color: rgba(0,0,0,0);}
+    70% {-webkit-filter: brightness(0%); opacity: 0%; color: rgba(0,0,0,0);}
+    100% {-webkit-filter: brightness(100%) opacity: 100%; color: darkorange}
 }
 
 a {
@@ -111,5 +111,4 @@ td {
 	color: darkorange;
 	padding-right: 5px;
 	font-size: 10px;
-	text-shadow: none;
 }
