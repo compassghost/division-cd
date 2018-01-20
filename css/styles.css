@@ -82,11 +82,11 @@ h1 {
 }
 
 .container {
-	margin-top: 50px;
-	padding: 20px;
+	margin-top: 20px;
+	padding: 10px;
 	background-color: rgba(0,0,0,.87);
 	-webkit-animation: transparentBG 2s ease-in;
-	border-radius: 20px;
+	border-radius: 5px;
 	align: center;
 }
 
