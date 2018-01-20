@@ -2,17 +2,26 @@ html, body {
 	font-family: 'Share Tech Mono', sans-serif;
     height: 100%;
 }
+
 body {
 	text-align: center;
     display: table-cell;
-    vertical-align: middle;
-	color: darkorange;
+    vertical-align: middle;	
 	background-image: url("../images/wp.png");
 	background-repeat: no-repeat;
     background-attachment: fixed;
 	background-size:100%;
     background-position: center; 
-	-webkit-animation: phaseIn 2s ease-in;
+	color: darkorange;
+	-webkit-animation: fontColor 2s ease-in;
+}
+
+.page {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .cover {
@@ -73,8 +82,9 @@ h1 {
 }
 
 .container {
+	margin-top: 50px;
+	padding: 20px;
 	background-color: rgba(0,0,0,.87);
-
 	-webkit-animation: transparentBG 2s ease-in;
 	border-radius: 20px;
 	align: center;
@@ -86,6 +96,11 @@ h1 {
     100% {background-color: rgba(0,0,0,.87);}
 }
 
+@-webkit-keyframes fontColor {
+    0% {color: rgba(0,0,0,0);}
+    70% {color: rgba(0,0,0,0);}
+    100% {color: darkorange;}
+}
 
 img.center {
     display: block;
@@ -107,8 +122,15 @@ td {
 }
 
 .footer {
-	text-align: right;
+    position: absolute;
+    bottom: 0px;
+    right: 50px;
+    height: 35px;
+    margin: 0px 50px 0px 0px;
+    color: #000;
+    text-align: right;
+	text-shadow: 1px 0px #000, -1px 0px #000, 0px 1px #000, 0px -1px #000;
+	padding: 10px 30px;
 	color: darkorange;
-	padding-right: 5px;
-	font-size: 10px;
+	font-size: 14px;
 }
