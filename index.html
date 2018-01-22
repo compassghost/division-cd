@@ -1,9 +1,11 @@
 <html>
+<meta charset="utf-8"/>
 <title>Division Reset Timers</title>
 <link href='https://fonts.googleapis.com/css?family=Share Tech Mono' rel='stylesheet' type='text/css'/>
 <link href="css/styles.css" rel="stylesheet" type='text/css'/>
 <link href="css/watch.css" rel="stylesheet" type='text/css'/>
 <script src="scripts/script.js"></script>
+<script src="scripts/events.js"></script>
 <script>
 	window.onload = function() {
 		setInterval(function() {createTimer("dailies", getNextUTC(), "Dailies")}, 1000);
@@ -14,6 +16,13 @@
 		setInterval(function() {createTimer("legendaries", getNextDay(6), "Legendaries")}, 1000);
 		setInterval(function() {createTimer("dzweeklies", getNextDay(0), "DZ Weeklies")}, 1000);
 		setInterval(function() {createTimer("dzmonthlies", getNextMonth(), "DZ Monthlies")}, 1000);
+		setInterval(function() {
+			createEventTimer(
+				"Ambush",
+				"ambush", 
+				createUTCDate(2018, 1, 23, 12), 
+				createUTCDate(2018, 1, 30, 12)
+			)}, 1000);
 		setInterval(function() {createWatch("watch")}, 1000);
 	};
 	
@@ -22,7 +31,7 @@
 
 <body id="body">
 <div class="page">
-	<div class="outer_header">
+	<div class="outer_header glow">
 		<div class="header">
 			<div class="inner_header">
 			<p class="watch" id="watch"></p>
@@ -40,6 +49,7 @@
 		<tr><td id="dzweeklies"/></tr>
 		<tr><td id="dzmonthlies"/></tr>
 		<!--<tr><td colspan=2 style="text-align: center;"><a class='event' href="events/">Division Event Timers</a></td></tr>-->
+		<tr><td id="ambush" class="glow"></tr>
 	</table>
 	</div>
 </div>

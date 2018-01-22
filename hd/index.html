@@ -15,6 +15,13 @@
 		setInterval(function() {createTimer("dzweeklies", getNextDay(0), "DZ Weeklies")}, 1000);
 		setInterval(function() {createTimer("dzmonthlies", getNextMonth(), "DZ Monthlies")}, 1000);
 		setInterval(function() {createWatch("watch")}, 1000);
+		setInterval(function() {
+			createEventTimer(
+				"Ambush",
+				"ambush", 
+				createUTCDate(2018, 1, 23, 9), 
+				createUTCDate(2018, 1, 23, 9)
+			)}, 1000);
 	};
 	
 
@@ -46,6 +53,7 @@
 	<tr><td id="legendaries"/></tr>
 	<tr><td id="dzweeklies"/></tr>
 	<tr><td id="dzmonthlies"/></tr>
+	<tr><td id="ambush"/></tr>
 	<!--<tr><td colspan=2 style="text-align: center;"><a class='event' href="events/">Division Event Timers</a></td></tr>-->
 </table>
 </div>

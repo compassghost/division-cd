@@ -3,11 +3,14 @@
     display: table; 
 	width: 700px;
 	height: 200px;
+}
+
+.glow {
 	-webkit-transform-style: preserve-3d;
 	-webkit-animation: glow 1s ease-in-out;
 	-webkit-animation-iteration-count: infinite; 
 	-webkit-animation-direction: alternate;
-}
+}	
 
 
 @-webkit-keyframes glow {
@@ -59,7 +62,6 @@
 	height: 100%;
 	
 }
-
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
