@@ -4,6 +4,7 @@ html, body {
 }
 
 body {
+	background-color: black;
 	text-align: center;
     display: table-cell;
     vertical-align: middle;	
