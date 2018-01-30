@@ -19,6 +19,7 @@ function createEventTimer(itemName, timerId, startDay, endDay) {
 		createTimer(timerId, endDay, itemName + " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ends in ");
 	}
 	else {
+	    document.getElementById(timerId).innerHTML = "";
 	}
 
 
