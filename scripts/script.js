@@ -77,6 +77,30 @@ function getNextMonth() {
 	return target;
 }
 
+function getNextSupply() {
+	var target = new Date();
+	//this month
+	if(target.getUTCDate < 15) {
+		target.setUTCDate(1)
+		target.setUTCHours(0);
+		target.setMinutes(0);
+		target.setSeconds(1);
+		target.setMilliseconds(0);
+		target.setUTCMonth(target.getUTCMonth() + 1);		
+	}
+	//next month
+	else {
+		target.setUTCDate(1)
+		target.setUTCHours(0);
+		target.setMinutes(0);
+		target.setSeconds(1);
+		target.setMilliseconds(0);
+		target.setUTCMonth(target.getUTCMonth() + 1);
+	}
+	return target;
+}
+
+
 function getNextDayPremium() {
 	var date = getNextDay(5);
 	date.setUTCHours(-24+9);

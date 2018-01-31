@@ -16,13 +16,14 @@
 		setInterval(function() {createTimer("legendaries", getNextDay(6), "Legendaries")}, 1000);
 		setInterval(function() {createTimer("dzweeklies", getNextDay(0), "DZ Weeklies")}, 1000);
 		setInterval(function() {createTimer("dzmonthlies", getNextMonth(), "DZ Monthlies")}, 1000);
-		setInterval(function() {
+		setInterval(function() {createTimer("supplydrops", getNextSupply(), "Season Pass Drop")}, 1000);
+		/*setInterval(function() {
 			createEventTimer(
 				"Ambush",
 				"ambush", 
 				createUTCDate(2018, 1, 23, 12), 
 				createUTCDate(2018, 1, 30, 12)
-			)}, 1000);
+			)}, 1000);*/
 		setInterval(function() {createWatch("watch")}, 1000);
 	};
 	
@@ -48,8 +49,9 @@
 		<tr><td id="legendaries"/></tr>
 		<tr><td id="dzweeklies"/></tr>
 		<tr><td id="dzmonthlies"/></tr>
+		<tr><td id="supplydrops"/></tr>
 		<!--<tr><td colspan=2 style="text-align: center;"><a class='event' href="events/">Division Event Timers</a></td></tr>-->
-		<tr><td id="ambush" class="glow"></tr>
+		<!--<tr><td id="ambush" class="glow"></tr>-->
 	</table>
 	</div>
 </div>
