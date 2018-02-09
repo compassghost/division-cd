@@ -17,6 +17,13 @@
 		setInterval(function() {createTimer("dzweeklies", getNextDay(0), "DZ Weeklies")}, 1000);
 		setInterval(function() {createTimer("dzmonthlies", getNextMonth(), "DZ Monthlies")}, 1000);
 		setInterval(function() {createTimer("supplydrops", getNextSupply(), "Season Pass Supplies")}, 1000);
+		setInterval(function() {
+			createEventTimer(
+				"2x HVT Rewards",
+				"event", 
+				createUTCDate(2018, 2, 9, 0), 
+				createUTCDate(2018, 2, 12, 0)
+			)}, 1000);
 		/*setInterval(function() {
 			createEventTimer(
 				"Ambush",
@@ -50,8 +57,7 @@
 		<tr><td id="dzweeklies"/></tr>
 		<tr><td id="dzmonthlies"/></tr>
 		<tr><td id="supplydrops"/></tr>
-		<!--<tr><td colspan=2 style="text-align: center;"><a class='event' href="events/">Division Event Timers</a></td></tr>-->
-		<!--<tr><td id="ambush" class="glow"></tr>-->
+		<tr><td id="event" class="glow"></tr>
 	</table>
 	</div>
 </div>
