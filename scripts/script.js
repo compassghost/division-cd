@@ -80,13 +80,12 @@ function getNextMonth() {
 function getNextSupply() {
 	var target = new Date();
 	//this month
-	if(target.getUTCDate < 15) {
-		target.setUTCDate(1)
+	if(target.getUTCDate() < 15) {
+		target.setUTCDate(15)
 		target.setUTCHours(0);
 		target.setMinutes(0);
 		target.setSeconds(1);
 		target.setMilliseconds(0);
-		target.setUTCMonth(target.getUTCMonth() + 1);		
 	}
 	//next month
 	else {
