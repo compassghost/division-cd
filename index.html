@@ -17,20 +17,41 @@
 		setInterval(function() {createTimer("dzweeklies", getNextDay(0), "DZ Weeklies")}, 1000);
 		setInterval(function() {createTimer("dzmonthlies", getNextMonth(), "DZ Monthlies")}, 1000);
 		setInterval(function() {createTimer("supplydrops", getNextSupply(), "Season Pass Supplies")}, 1000);
+		/*setInterval(function() {
+			createEventTimer(
+				"Global Event",
+				"event", 
+				createUTCDate(2018, 3, 1, 18), 
+				createUTCDate(2018, 3, 5, 9)
+			)}, 1000);*/
 		setInterval(function() {
 			createEventTimer(
-				"2x FP Caches",
-				"event", 
-				createUTCDate(2018, 2, 23, 0), 
-				createUTCDate(2018, 2, 26, 0)
+				"Outbreak",
+				"outbreak", 
+				createUTCDate(2018, 3, 1, 18), 
+				createUTCDate(2018, 3, 5, 9)
 			)}, 1000);
-		/*setInterval(function() {
+		setInterval(function() {
+			createEventTimer(
+				"Assault",
+				"assault", 
+				createUTCDate(2018, 3, 8, 18), 
+				createUTCDate(2018, 3, 12, 9)
+			)}, 1000);
+		setInterval(function() {
+			createEventTimer(
+				"Strike",
+				"strike", 
+				createUTCDate(2018, 3, 15, 18), 
+				createUTCDate(2018, 3, 19, 9)
+			)}, 1000);
+		setInterval(function() {
 			createEventTimer(
 				"Ambush",
 				"ambush", 
-				createUTCDate(2018, 1, 23, 12), 
-				createUTCDate(2018, 1, 30, 12)
-			)}, 1000);*/
+				createUTCDate(2018, 3, 22, 18), 
+				createUTCDate(2018, 3, 26, 9)
+			)}, 1000);
 		setInterval(function() {createWatch("watch")}, 1000);
 	};
 	
@@ -57,7 +78,11 @@
 		<tr><td id="dzweeklies"/></tr>
 		<tr><td id="dzmonthlies"/></tr>
 		<tr><td id="supplydrops"/></tr>
-		<tr><td id="event" class="glow"></tr>
+		<tr><td id="outbreak" class="glow"></tr>
+		<tr><td id="assault" class="glow"></tr>
+		<tr><td id="strike" class="glow"></tr>
+		<tr><td id="ambush" class="glow"></tr>
+		<!--<tr><td id="event" class="glow"></tr>-->
 	</table>
 	</div>
 </div>
