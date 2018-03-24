@@ -14,12 +14,16 @@ function textPad(count) {
 	return pad;
 }
 
-function createTimer(timerId, targetDay, prefix) {
-  if(prefix === undefined)  {
-	  prefix = "";
+function deployTimer(timer) {
+	setInterval(timer, 1000);
+}
+
+function createTimer(displayText, timerId, targetDay) {
+  if(displayText=== undefined)  {
+	  displayText= "";
   }
   else {
-	  prefix += padding;
+	  displayText+= padding;
   }
 
   // Get todays date and time
@@ -35,7 +39,7 @@ function createTimer(timerId, targetDay, prefix) {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById(timerId).innerHTML = "<td>" + prefix + pad(days, 2) + "d " + pad(hours, 2) + "h "
+  document.getElementById(timerId).innerHTML = "<td>" + displayText+ pad(days, 2) + "d " + pad(hours, 2) + "h "
   + pad(minutes, 2) + "m " + pad(seconds, 2) + "s </td>";
 
 }
@@ -118,4 +122,31 @@ function getNextDay(dayOfWeek) {
 		target.setUTCDate(target.getUTCDate() + 1)		
 	}
 	return target;	
+}
+
+function createUTCDate(year, month, day, hour) {
+	var date = new Date();
+	date.setUTCFullYear(year);
+	date.setUTCMonth(month - 1);
+	date.setUTCDate(day);
+	date.setUTCHours(hour);
+	date.setUTCMinutes(0);
+	date.setUTCSeconds(0);
+	date.setUTCMilliseconds(0);
+	
+	return date;
+}
+
+function createEventTimer(itemName, timerId, startDay, endDay) {
+	if(startDay.getTime() > new Date().getTime()) {
+		createTimer(itemName + " starts in", timerId, startDay);
+	}
+	else if(endDay.getTime() > new Date().getTime()) {
+		createTimer(itemName + "", timerId, endDay);
+	}
+	else {
+	    document.getElementById(timerId).innerHTML = "";
+	}
+
+
 }

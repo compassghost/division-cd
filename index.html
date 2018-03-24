@@ -4,63 +4,87 @@
 <link href='https://fonts.googleapis.com/css?family=Share Tech Mono' rel='stylesheet' type='text/css'/>
 <link href="css/styles.css" rel="stylesheet" type='text/css'/>
 <link href="css/watch.css" rel="stylesheet" type='text/css'/>
-<script src="scripts/script.js"></script>
-<script src="scripts/events.js"></script>
+<script src="scripts/timer.js"></script>
 <script>
 	window.onload = function() {
-		setInterval(function() {createTimer("dailies", getNextUTC(), "Dailies")}, 1000);
-		setInterval(function() {createTimer("weeklies", getNextDay(2), "Weekly Assignments")}, 1000);
-		setInterval(function() {createTimer("hvts", getNextDay(5), "Weekly HVTs")}, 1000);
-		setInterval(function() {createTimer("vendors", getNextDay(6), "Vendors")}, 1000);
-		setInterval(function() {createTimer("incursions", getNextDay(6), "Incursions")}, 1000);
-		setInterval(function() {createTimer("legendaries", getNextDay(6), "Legendaries")}, 1000);
-		setInterval(function() {createTimer("dzweeklies", getNextDay(0), "DZ Weeklies")}, 1000);
-		setInterval(function() {createTimer("dzmonthlies", getNextMonth(), "DZ Monthlies")}, 1000);
-		setInterval(function() {createTimer("supplydrops", getNextSupply(), "Season Pass Supplies")}, 1000);
-		/*setInterval(function() {
-			createEventTimer(
-				"Global Event",
-				"event", 
-				createUTCDate(2018, 3, 1, 18), 
-				createUTCDate(2018, 3, 5, 9)
-			)}, 1000);*/
-		setInterval(function() {
-			createEventTimer(
+		deployTimer(
+			createTimer.bind(null, 
+				"Dailies", 
+				"dailies", 
+				getNextUTC()));
+		deployTimer(
+			createTimer.bind(null, 
+				"Weekly Assignments", 
+				"weeklies", 
+				getNextDay(2)));
+		deployTimer(
+			createTimer.bind(null, 
+				"Weekly HVTs", 
+				"hvts", 
+				getNextDay(5)));
+		deployTimer(
+			createTimer.bind(null, 
+				"Vendors", 
+				"vendors", 
+				getNextDay(6)));
+		deployTimer(
+			createTimer.bind(null, 
+				"Incursions", 
+				"incursions", 
+				getNextDay(6)));
+		deployTimer(
+			createTimer.bind(null, 
+				"Legendaries", 
+				"legendaries", 
+				getNextDay(6)));
+		deployTimer(
+			createTimer.bind(null, 
+				"DZ Weeklies", 
+				"dzweeklies", 
+				getNextDay(0)));
+		deployTimer(
+			createTimer.bind(null, 
+				"DZ Montlhies", 
+				"dzmonthlies", 
+				getNextMonth()));
+		deployTimer(
+			createTimer.bind(null, 
+				"Season Pass Drops", 
+				"supplydrops", 
+				getNextSupply()));
+
+		deployTimer(
+			createEventTimer.bind(null, 
 				"Outbreak",
 				"outbreak", 
 				createUTCDate(2018, 3, 26, 13), 
-				createUTCDate(2018, 3, 28, 7)
-			)}, 1000);
-		setInterval(function() {
-			createEventTimer(
+				createUTCDate(2018, 3, 28, 7)));
+		deployTimer(
+			createEventTimer.bind(null, 
 				"Assault",
 				"assault", 
 				createUTCDate(2018, 3, 28, 8), 
-				createUTCDate(2018, 3, 30, 7)
-			)}, 1000);
-		setInterval(function() {
-			createEventTimer(
+				createUTCDate(2018, 3, 30, 7)));
+		deployTimer(
+			createEventTimer.bind(null, 
 				"Strike",
 				"strike", 
 				createUTCDate(2018, 3, 30, 8), 
-				createUTCDate(2018, 4, 1, 7)
-			)}, 1000);
-		setInterval(function() {
-			createEventTimer(
+				createUTCDate(2018, 4, 1, 7)));
+		deployTimer(
+			createEventTimer.bind(null, 
 				"Ambush",
 				"ambush", 
 				createUTCDate(2018, 3, 22, 12), 
-				createUTCDate(2018, 3, 26, 8)
-			)}, 1000);
-		setInterval(function() {createWatch("watch")}, 1000);
-		setInterval(function() {
-			createEventTimer(
+				createUTCDate(2018, 3, 26, 8)));
+		deployTimer(
+			createEventTimer.bind(null, 
 				"Ambush",
 				"ambush2", 
 				createUTCDate(2018, 4, 3, 8), 
-				createUTCDate(2018, 4, 5, 7)
-			)}, 1000);
-		setInterval(function() {createWatch("watch")}, 1000);
+				createUTCDate(2018, 4, 5, 7)));
+				
+		deployTimer(function() {createWatch("watch")});
 	};
 	
 
