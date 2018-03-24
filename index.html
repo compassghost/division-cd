@@ -28,22 +28,22 @@
 			createEventTimer(
 				"Outbreak",
 				"outbreak", 
-				createUTCDate(2018, 3, 1, 18), 
-				createUTCDate(2018, 3, 5, 8)
+				createUTCDate(2018, 3, 26, 13), 
+				createUTCDate(2018, 3, 28, 7)
 			)}, 1000);
 		setInterval(function() {
 			createEventTimer(
 				"Assault",
 				"assault", 
-				createUTCDate(2018, 3, 8, 12), 
-				createUTCDate(2018, 3, 12, 8)
+				createUTCDate(2018, 3, 28, 8), 
+				createUTCDate(2018, 3, 30, 7)
 			)}, 1000);
 		setInterval(function() {
 			createEventTimer(
 				"Strike",
 				"strike", 
-				createUTCDate(2018, 3, 15, 12), 
-				createUTCDate(2018, 3, 19, 8)
+				createUTCDate(2018, 3, 30, 8), 
+				createUTCDate(2018, 4, 1, 7)
 			)}, 1000);
 		setInterval(function() {
 			createEventTimer(
@@ -51,6 +51,14 @@
 				"ambush", 
 				createUTCDate(2018, 3, 22, 12), 
 				createUTCDate(2018, 3, 26, 8)
+			)}, 1000);
+		setInterval(function() {createWatch("watch")}, 1000);
+		setInterval(function() {
+			createEventTimer(
+				"Ambush",
+				"ambush2", 
+				createUTCDate(2018, 4, 3, 8), 
+				createUTCDate(2018, 4, 5, 7)
 			)}, 1000);
 		setInterval(function() {createWatch("watch")}, 1000);
 	};
@@ -78,10 +86,11 @@
 		<tr><td id="dzweeklies"/></tr>
 		<tr><td id="dzmonthlies"/></tr>
 		<tr><td id="supplydrops"/></tr>
+		<tr><td id="ambush" class="glow"></tr>
 		<tr><td id="outbreak" class="glow"></tr>
 		<tr><td id="assault" class="glow"></tr>
 		<tr><td id="strike" class="glow"></tr>
-		<tr><td id="ambush" class="glow"></tr>
+		<tr><td id="ambush2" class="glow"></tr>
 		<!--<tr><td id="event" class="glow"></tr>-->
 	</table>
 	</div>
