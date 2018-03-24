@@ -35,8 +35,8 @@ function createTimer(timerId, targetDay, prefix) {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById(timerId).innerHTML = prefix + pad(days, 2) + "d " + pad(hours, 2) + "h "
-  + pad(minutes, 2) + "m " + pad(seconds, 2) + "s ";
+  document.getElementById(timerId).innerHTML = "<td>" + prefix + pad(days, 2) + "d " + pad(hours, 2) + "h "
+  + pad(minutes, 2) + "m " + pad(seconds, 2) + "s </td>";
 
 }
 
