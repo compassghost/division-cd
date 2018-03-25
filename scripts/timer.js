@@ -9,18 +9,6 @@ function padTime(n) {
 	return pad(n, 2);
 }
 
-//default 10-padding of nbsp;
-var padding = textPad(10);
-
-//creates a string of nbsp; of length count
-function textPad(count) {
-	var pad = "";
-	for(i = 0; i < count; i++) {
-		pad += "&nbsp;";
-	}
-	return pad;
-}
-
 //creates an auto-refreshing display for timer, default time is 1000ms
 function deployTimer(timer) {
 	setInterval(timer, 1000);
@@ -30,9 +18,6 @@ function deployTimer(timer) {
 function createTimer(displayText, timerId, targetDay) {
   if(displayText=== undefined)  {
 	  displayText= "";
-  }
-  else {
-	  displayText+= padding;
   }
   
   if(typeof targetDay === 'function') {
@@ -51,10 +36,15 @@ function createTimer(displayText, timerId, targetDay) {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display the result in the element with id="demo"
-  document.getElementById(timerId).innerHTML = "<td>" + displayText+ padTime(days) + "d " + padTime(hours) + "h "
-  + padTime(minutes) + "m " + padTime(seconds) + "s </td>";
+  var timeText = getFormattedTimer(days, hours, minutes, seconds)
+  
+  document.getElementById(timerId).innerHTML = "<div>" + displayText + "</div><div>" + timeText + "</div>";
 
+}
+
+function getFormattedTimer(days, hours, minutes, seconds) {
+	return + padTime(days) + "d " + padTime(hours) + "h "
+  + padTime(minutes) + "m " + padTime(seconds) + "s";
 }
 
 //gets next UTC
