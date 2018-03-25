@@ -5,90 +5,7 @@
 <link href="css/styles.css" rel="stylesheet" type='text/css'/>
 <link href="css/watch.css" rel="stylesheet" type='text/css'/>
 <script src="scripts/timer.js"></script>
-<script>
-	window.onload = function() {
-		deployTimer(
-			createTimer.bind(null, 
-				"Dailies", 
-				"dailies", 
-				getNextUTC.bind(null,)));
-		deployTimer(
-			createTimer.bind(null, 
-				"Weekly Assignments", 
-				"weeklies", 
-				getNextDay.bind(null,2)));
-		deployTimer(
-			createTimer.bind(null, 
-				"Weekly HVTs", 
-				"hvts", 
-				getNextDay.bind(null,5)));
-		deployTimer(
-			createTimer.bind(null, 
-				"Vendors", 
-				"vendors", 
-				getNextDay.bind(null,6)));
-		deployTimer(
-			createTimer.bind(null, 
-				"Incursions", 
-				"incursions", 
-				getNextDay.bind(null,6)));
-		deployTimer(
-			createTimer.bind(null, 
-				"Legendaries", 
-				"legendaries", 
-				getNextDay.bind(null,6)));
-		deployTimer(
-			createTimer.bind(null, 
-				"DZ Weeklies", 
-				"dzweeklies", 
-				getNextDay.bind(null,0)));
-		deployTimer(
-			createTimer.bind(null, 
-				"DZ Montlhies", 
-				"dzmonthlies", 
-				getNextMonth.bind(null)));
-		deployTimer(
-			createTimer.bind(null, 
-				"Season Pass Drops", 
-				"supplydrops", 
-				getNextSupply.bind(null)));
-
-		deployTimer(
-			createEventTimer.bind(null, 
-				"Outbreak",
-				"outbreak", 
-				createUTCDate(2018, 3, 26, 13), 
-				createUTCDate(2018, 3, 28, 7)));
-		deployTimer(
-			createEventTimer.bind(null, 
-				"Assault",
-				"assault", 
-				createUTCDate(2018, 3, 28, 8), 
-				createUTCDate(2018, 3, 30, 7)));
-		deployTimer(
-			createEventTimer.bind(null, 
-				"Strike",
-				"strike", 
-				createUTCDate(2018, 3, 30, 8), 
-				createUTCDate(2018, 4, 1, 7)));
-		deployTimer(
-			createEventTimer.bind(null, 
-				"Ambush",
-				"ambush", 
-				createUTCDate(2018, 3, 22, 12), 
-				createUTCDate(2018, 3, 26, 8)));
-		deployTimer(
-			createEventTimer.bind(null, 
-				"Ambush",
-				"ambush2", 
-				createUTCDate(2018, 4, 3, 8), 
-				createUTCDate(2018, 4, 5, 7)));
-				
-		deployTimer(function() {createWatch("watch")});
-	};
-	
-
-</script>
+<script src="scripts/script.js"></script>
 
 <body id="body">
 <div class="page">
@@ -100,23 +17,22 @@
 		</div>
 	</div>
 	<div class="container">
-	<table>
-		<tr id="dailies"/>
-		<tr id="weeklies"/>
-		<tr id="hvts"/>
-		<tr id="vendors"/>
-		<tr id="incursions"/>
-		<tr id="legendaries"/>
-		<tr id="dzweeklies"/>
-		<tr id="dzmonthlies"/>
-		<tr id="supplydrops"/>
-		<tr id="ambush" class="glow"/>
-		<tr id="outbreak" class="glow"/>
-		<tr id="assault" class="glow"/>
-		<tr id="strike" class="glow"/>
-		<tr id="ambush2" class="glow"/>
-		<!--<tr id="event" class="glow"/>-->
-	</table>
+		<table>
+			<tr id="dailies"/>
+			<tr id="weeklies"/>
+			<tr id="hvts"/>
+			<tr id="vendors"/>
+			<tr id="incursions"/>
+			<tr id="legendaries"/>
+			<tr id="dzweeklies"/>
+			<tr id="dzmonthlies"/>
+			<tr id="supplydrops"/>
+			<tr id="ambush" class="glow"/>
+			<tr id="outbreak" class="glow"/>
+			<tr id="assault" class="glow"/>
+			<tr id="strike" class="glow"/>
+			<tr id="ambush2" class="glow"/>
+		</table>
 	</div>
 </div>
 <div class="footer">Created by compassghost, 2017-2018 Source code <a href="https://github.com/compassghost/division-cd">here</a>.</div>
