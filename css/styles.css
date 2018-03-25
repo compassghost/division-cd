@@ -89,12 +89,12 @@ a:visited {
 	flex-direction: column;
 	justify-content: center;
 	align: center;
+	align-items: center;
     vertical-align: middle;
 }
 
 .container {
-	width: 90vw;
-	max-width: 30em;
+	width: 30em;
 	padding: 0.5em;
 	background-color: rgba(0,0,0,.87);
 	-webkit-animation: transparentBG 2s ease-in;
@@ -139,12 +139,10 @@ img.center {
 }
 
 .footer {
-	position: fixed;
-    bottom: 0px;
-    right: 0px;
     color: #000;
-    text-align: right;
 	text-shadow: 1px 0px #000, -1px 0px #000, 0px 1px #000, 0px -1px #000;
 	color: darkorange;
-	font-size: 14px;
+	font-size: 1em;
+	flex: 0 0 none;
+    align-self: flex-end;
 }

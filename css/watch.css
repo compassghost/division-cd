@@ -5,12 +5,7 @@
 	height: 200px;
 }
 
-.glow {
-	-webkit-transform-style: preserve-3d;
-	-webkit-animation: glow 1s ease-in-out;
-	-webkit-animation-iteration-count: infinite; 
-	-webkit-animation-direction: alternate;
-}	
+
 
 .header {
 	background-color: rgba(0,0,0,.87);
