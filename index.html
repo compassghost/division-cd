@@ -11,47 +11,47 @@
 			createTimer.bind(null, 
 				"Dailies", 
 				"dailies", 
-				getNextUTC()));
+				getNextUTC.bind(null,)));
 		deployTimer(
 			createTimer.bind(null, 
 				"Weekly Assignments", 
 				"weeklies", 
-				getNextDay(2)));
+				getNextDay.bind(null,2)));
 		deployTimer(
 			createTimer.bind(null, 
 				"Weekly HVTs", 
 				"hvts", 
-				getNextDay(5)));
+				getNextDay.bind(null,5)));
 		deployTimer(
 			createTimer.bind(null, 
 				"Vendors", 
 				"vendors", 
-				getNextDay(6)));
+				getNextDay.bind(null,6)));
 		deployTimer(
 			createTimer.bind(null, 
 				"Incursions", 
 				"incursions", 
-				getNextDay(6)));
+				getNextDay.bind(null,6)));
 		deployTimer(
 			createTimer.bind(null, 
 				"Legendaries", 
 				"legendaries", 
-				getNextDay(6)));
+				getNextDay.bind(null,6)));
 		deployTimer(
 			createTimer.bind(null, 
 				"DZ Weeklies", 
 				"dzweeklies", 
-				getNextDay(0)));
+				getNextDay.bind(null,0)));
 		deployTimer(
 			createTimer.bind(null, 
 				"DZ Montlhies", 
 				"dzmonthlies", 
-				getNextMonth()));
+				getNextMonth.bind(null)));
 		deployTimer(
 			createTimer.bind(null, 
 				"Season Pass Drops", 
 				"supplydrops", 
-				getNextSupply()));
+				getNextSupply.bind(null)));
 
 		deployTimer(
 			createEventTimer.bind(null, 

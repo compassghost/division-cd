@@ -25,6 +25,10 @@ function createTimer(displayText, timerId, targetDay) {
   else {
 	  displayText+= padding;
   }
+  
+  if(typeof targetDay === 'function') {
+	 targetDay = targetDay(); 
+  }
 
   // Get todays date and time
   var now = new Date().getTime();
