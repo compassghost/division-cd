@@ -12,12 +12,6 @@
 	-webkit-animation-direction: alternate;
 }	
 
-
-@-webkit-keyframes glow {
-    0% {-webkit-filter: brightness(120%);}
-    100% {-webkit-filter: brightness(180%);}
-}
-
 .header {
 	background-color: rgba(0,0,0,.87);
 	background-image: url("../images/watchface.png");

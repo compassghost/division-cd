@@ -9,7 +9,6 @@ html, body {
 }
 
 body {
-	position: relative;
 	background-color: black;
 	text-align: center;
     display: table-cell;
@@ -26,14 +25,6 @@ body {
 	-webkit-animation: fontColor 2s ease-in;
 }
 
-.page {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-}
 
 .cover {
 	z-index: -99999;
@@ -47,6 +38,19 @@ body {
 .no-bg {
 	background-image: none !important;
 }
+
+.glow {
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation: glow 1s ease-in-out;
+	-webkit-animation-iteration-count: infinite; 
+	-webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes glow {
+    0% {-webkit-filter: brightness(120%);}
+    100% {-webkit-filter: brightness(180%);}
+}
+
 
 .background {
 	z-index: -99999999999;
@@ -77,25 +81,30 @@ a:visited {
 	color: red;
 }
 
-
-h1 {
-	margin: 0px;
-	font-size: 40px;
+.page {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align: center;
+    vertical-align: middle;
 }
 
 .container {
-	width: 700px;
-	margin-top: 2em;
+	width: 90vw;
+	max-width: 30em;
 	padding: 0.5em;
 	background-color: rgba(0,0,0,.87);
 	-webkit-animation: transparentBG 2s ease-in;
 	border-radius: 0.3em;
 	align: center;
 	vertical-align: middle;
-}
-
-.container * {
-	-webkit-animation: transparentBG 2s ease-in !important;	
+	flex: 0 0 none;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5em;	
 }
 
 @-webkit-keyframes transparentBG {
@@ -115,20 +124,13 @@ img.center {
     margin: 0 auto;
 }
 
-.flex_base {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	font-size: 1.5em;	
-}
 
 .flex_base > div {
 	display: flex;
 	flex-wrap: no-wrap;
 	justify-content: space-between;
 	margin: 0.15em;
-	background-color: rgba(15,10,0,.5);
+	background-color: rgba(1, 1, 1, 0.);
 }
 
 .flex_base > div > div {
@@ -137,8 +139,7 @@ img.center {
 }
 
 .footer {
-	position: absolute;
-	padding-top: 3em;
+	position: fixed;
     bottom: 0px;
     right: 0px;
     color: #000;

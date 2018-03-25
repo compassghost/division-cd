@@ -76,5 +76,5 @@ window.onload = function() {
 			createUTCDate(2018, 4, 3, 8), 
 			createUTCDate(2018, 4, 5, 7)));
 			
-	deployTimer(function() {createWatch("watch")});
+	//deployTimer(function() {createWatch("watch")});
 };

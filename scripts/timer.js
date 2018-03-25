@@ -131,7 +131,6 @@ function createEventTimer(itemName, timerId, startDay, endDay) {
 	}
 }
 
-
 function createWatch(timerId) {
   // Get todays date and time
   var now = new Date();
