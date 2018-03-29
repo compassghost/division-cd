@@ -1,7 +1,7 @@
 window.onload = function() {
 	deployTimer(
 		createTimer.bind(null, 
-			"Dailies", 
+			"Daily Assignments", 
 			"dailies", 
 			getNextUTC.bind(null,)));
 	deployTimer(
@@ -16,32 +16,27 @@ window.onload = function() {
 			getNextDay.bind(null,5)));
 	deployTimer(
 		createTimer.bind(null, 
-			"Vendors", 
+			"Vendor Restock", 
 			"vendors", 
 			getNextDay.bind(null,6)));
 	deployTimer(
 		createTimer.bind(null, 
-			"Incursions", 
+			"Incursions and Legendary Missions", 
 			"incursions", 
 			getNextDay.bind(null,6)));
 	deployTimer(
 		createTimer.bind(null, 
-			"Legendaries", 
-			"legendaries", 
-			getNextDay.bind(null,6)));
-	deployTimer(
-		createTimer.bind(null, 
-			"DZ Weeklies", 
+			"DZ Weekly Missions", 
 			"dzweeklies", 
 			getNextDay.bind(null,0)));
 	deployTimer(
 		createTimer.bind(null, 
-			"DZ Montlhies", 
+			"DZ Monthly Missions", 
 			"dzmonthlies", 
 			getNextMonth.bind(null)));
 	deployTimer(
 		createTimer.bind(null, 
-			"Season Pass Drops", 
+			"Season Pass Supply Drop", 
 			"supplydrops", 
 			getNextSupply.bind(null)));
 
@@ -67,14 +62,17 @@ window.onload = function() {
 		createEventTimer.bind(null, 
 			"Ambush",
 			"ambush", 
-			createUTCDate(2018, 3, 22, 12), 
-			createUTCDate(2018, 3, 26, 8)));
-	deployTimer(
-		createEventTimer.bind(null, 
-			"Ambush",
-			"ambush2", 
 			createUTCDate(2018, 4, 3, 8), 
 			createUTCDate(2018, 4, 5, 7)));
-			
-	//deployTimer(function() {createWatch("watch")});
+	deployTimer(
+		createEventTimer.bind(null, 
+			"Blackout",
+			"blackout", 
+			createUTCDate(2018, 3, 26, 13), 
+			createUTCDate(2018, 3, 28, 7)));
+	deployTimer(
+		createTimer.bind(null, 
+			"Patch 1.8.1", 
+			"patch", 
+			createUTCDate(2018, 4, 12, 7)));
 };
