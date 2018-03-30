@@ -40,14 +40,14 @@ body {
 
 .glow {
 	-webkit-transform-style: preserve-3d;
-	-webkit-animation: glow 1s ease-in-out;
+	-webkit-animation: glow 0.75s ease-in-out;
 	-webkit-animation-iteration-count: infinite; 
 	-webkit-animation-direction: alternate;
 }
 
 @-webkit-keyframes glow {
-    0% {-webkit-filter: brightness(120%);}
-    100% {-webkit-filter: brightness(180%);}
+    0% {-webkit-filter: brightness(100%);}
+    100% {-webkit-filter: brightness(200%);}
 }
 
 
@@ -95,7 +95,7 @@ a:visited {
 .container {
 	width: 30em;
 	padding: 0.5em;
-	background-color: rgba(0,0,0,.87);
+	background-color: rgb(0,0,0,.87);
 	-webkit-animation: transparentBG 2s ease-in;
 	border-radius: 0.3em;
 	align: center;
@@ -123,7 +123,8 @@ img.center {
 	flex-wrap: no-wrap;
 	justify-content: space-between;
 	margin: 0.15em;
-	background-color: rgba(1, 1, 1, 0.);
+	background-color: rgb(255,165,0,.02);
+
 }
 
 .flex_base > div > div {
