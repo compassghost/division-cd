@@ -14,10 +14,58 @@ function deployTimer(timer) {
 	setInterval(timer, 1000);
 }
 
+function playNotificationSound() {
+	var audio = new Audio('audio/note.mp3');
+	audio.volume = 0.5;
+    audio.play();
+}
+
+var lastCall = 0;
+
+function notifyMe(func) {
+	var now = new Date().getTime();
+	if(now - lastCall < 200) {
+		setTimeout(notifyMe.bind(window, func), 200);
+	}
+	else {
+		func();
+		lastCall = now;
+	}
+}
+
+function sendNotification(displayText, notificationText) {
+	console.log("Sending in " + displayText);
+  if (!("Notification" in window)) {
+
+  }
+
+  else if (Notification.permission === "granted") {
+	if(!notificationText) {
+		notificationText = " reset.";
+	}
+    var notification = new Notification(displayText + notificationText);
+  }
+  else if (Notification.permission !== 'denied') {
+    Notification.requestPermission(function (permission) {
+		  if (permission === "granted") {
+			var notification = new Notification("You will now receive notifications for timers.");
+		  }
+    });
+  }
+
+  // Finally, if the user has denied notifications and you 
+  // want to be respectful there is no need to bother them any more.
+}
+
 //Timer function that displays displayText inside a TR timerID counting towards targetDay
-function createTimer(displayText, timerId, targetDay) {
+function createTimer(displayText, timerId, targetDay, suffix, noteSuffix) {
+  var notText = displayText;
   if(displayText=== undefined)  {
 	  displayText= "";
+  }
+  
+  if(suffix) {
+	 displayText += suffix; 
   }
   
   if(typeof targetDay === 'function') {
@@ -29,6 +77,13 @@ function createTimer(displayText, timerId, targetDay) {
 
   // Find the distance between now an the count down date
   var distance = targetDay.getTime() - now;
+  if(distance < 0) {
+	distance = 0;
+  }
+ 
+  if(distance > 0 && distance <= 1000) {
+	  notifyMe(sendNotification.bind(null,notText, noteSuffix));
+  }
 
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -121,10 +176,10 @@ function createUTCDate(year, month, day, hour) {
 function createEventTimer(itemName, timerId, startDay, endDay) {
 	
 	if(startDay.getTime() > new Date().getTime()) {
-		createTimer(itemName + " activating in ", timerId, startDay);
+		createTimer(itemName, timerId, startDay, " activating in ", " activated");
 	}
 	else if(endDay.getTime() > new Date().getTime()) {
-		createTimer(itemName + " is Active ", timerId, endDay);
+		createTimer(itemName, timerId, endDay, " is Active ", " has ended");
 	    document.getElementById(timerId).classList.add('glow');
 	}
 	else {
