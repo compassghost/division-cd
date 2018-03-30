@@ -22,7 +22,6 @@ body {
     -o-background-size: cover;
     background-size: cover;
 	color: darkorange;
-	-webkit-animation: fontColor 2s ease-in;
 }
 
 
@@ -108,15 +107,9 @@ a:visited {
 }
 
 @-webkit-keyframes transparentBG {
-    0% {background-color: rgba(0,0,0,0);}
-    70% {background-color: rgba(0,0,0,0);}
-    100% {background-color: rgba(0,0,0,.87);}
-}
-
-@-webkit-keyframes fontColor {
-    0% {color: rgba(0,0,0,0);}
-    70% {color: rgba(0,0,0,0);}
-    100% {color: darkorange;}
+    0% {opacity: 0;}
+    70% {opacity: 0}
+    100% {opacity: 1}
 }
 
 img.center {
@@ -145,4 +138,5 @@ img.center {
 	font-size: 1em;
 	flex: 0 0 none;
     align-self: flex-end;
+	-webkit-animation: transparentBG 2s ease-in;
 }
