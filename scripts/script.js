@@ -76,3 +76,40 @@ window.onload = function() {
 			"patch", 
 			createUTCDate(2018, 4, 12, 7)));
 };
+
+
+var muted = true;
+function toggleAudio() {
+	var player = document.getElementById('player');
+	var button = document.getElementById('mute');
+	if(muted) {
+		console.log("Blep");
+		player.muted = false;
+		button.innerHTML = "Disable ISAC Notifications";
+		muted = false;
+		boot.play();
+	}
+	else {
+		boot.pause();
+		boot.currentTime = 0;
+		player.muted = true;
+		button.innerHTML = "Enable ISAC Notifications";
+		muted = true;
+	}
+}
+
+var boot = new Audio("audio/boot.mp3");
+boot.volume = 0.5;
+
+function playBootSound() {
+    audio.play();
+}
+
+
+
+function playNotificationSound() {
+	var audio = document.getElementById("player");
+	audio.volume = 0.5;
+    audio.play();
+}
+

@@ -14,12 +14,6 @@ function deployTimer(timer) {
 	setInterval(timer, 1000);
 }
 
-function playNotificationSound() {
-	var audio = new Audio('audio/note.mp3');
-	audio.volume = 0.5;
-    audio.play();
-}
-
 var lastCall = 0;
 
 function notifyMe(func) {
@@ -44,13 +38,6 @@ function sendNotification(displayText, notificationText) {
 		notificationText = " reset.";
 	}
     var notification = new Notification(displayText + notificationText);
-  }
-  else if (Notification.permission !== 'denied') {
-    Notification.requestPermission(function (permission) {
-		  if (permission === "granted") {
-			var notification = new Notification("You will now receive notifications for timers.");
-		  }
-    });
   }
 
   // Finally, if the user has denied notifications and you 
@@ -81,8 +68,9 @@ function createTimer(displayText, timerId, targetDay, suffix, noteSuffix) {
 	distance = 0;
   }
  
+  //alert function
   if(distance > 0 && distance <= 1000) {
-	  notifyMe(sendNotification.bind(null,notText, noteSuffix));
+	  notifyMe(sendNotification.bind(null, notText, noteSuffix));
   }
 
   // Time calculations for days, hours, minutes and seconds

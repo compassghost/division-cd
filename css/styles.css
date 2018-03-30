@@ -3,8 +3,11 @@ html {
     margin: auto;
 }
 
-html, body {
+html > * {
 	font-family: 'Share Tech Mono', sans-serif;
+}
+
+html, body {
     height: 100%;
 }
 
@@ -140,4 +143,19 @@ img.center {
 	flex: 0 0 none;
     align-self: flex-end;
 	-webkit-animation: transparentBG 1.5s ease-in;
+}
+
+.btn {
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  color: orange;
+  font-size: 20px;
+  background: rgba(255, 165, 0, 0.1);
+  padding: 10px 20px 10px 20px;
+  border: solid orange 0px;
+}
+
+.btn:hover {
+  background: #874b02;
 }
