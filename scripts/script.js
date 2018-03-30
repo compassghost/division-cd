@@ -75,6 +75,11 @@ window.onload = function() {
 			"Patch 1.8.1", 
 			"patch", 
 			createUTCDate(2018, 4, 12, 7)));
+	deployTimer(
+		createTimer.bind(null, 
+			"E3 - Division 2 Reveal", 
+			"e3", 
+			createUTCDate(2018, 6, 12, 18)));
 };
 
 
