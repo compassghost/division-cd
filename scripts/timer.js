@@ -28,18 +28,21 @@ function notifyMe(func) {
 }
 
 function sendNotification(displayText, notificationText) {
-	console.log("Sending in " + displayText);
   if (!("Notification" in window)) {
 
   }
 
   else if (Notification.permission === "granted") {
+    Notification.requestPermission()
 	if(!notificationText) {
 		notificationText = " reset.";
 	}
+	playNotificationSound();
     var notification = new Notification(displayText + notificationText);
   }
-
+  else if (Notification.permission === "denied") {
+	Notification.requestPermission();
+  }
   // Finally, if the user has denied notifications and you 
   // want to be respectful there is no need to bother them any more.
 }

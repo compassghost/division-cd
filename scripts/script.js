@@ -83,7 +83,6 @@ function toggleAudio() {
 	var player = document.getElementById('player');
 	var button = document.getElementById('mute');
 	if(muted) {
-		console.log("Blep");
 		player.muted = false;
 		button.innerHTML = "Disable ISAC Notifications";
 		muted = false;
@@ -101,15 +100,10 @@ function toggleAudio() {
 var boot = new Audio("audio/boot.mp3");
 boot.volume = 0.5;
 
-function playBootSound() {
-    audio.play();
-}
-
-
 
 function playNotificationSound() {
 	var audio = document.getElementById("player");
-	audio.volume = 0.5;
+	audio.volume = 0.75;
     audio.play();
 }
 
