@@ -96,7 +96,7 @@ a:visited {
 	width: 30em;
 	padding: 0.5em;
 	background-color: rgb(0,0,0,.87);
-	-webkit-animation: transparentBG 2s ease-in;
+	-webkit-animation: transparentBG 1.5s ease-in;
 	border-radius: 0.3em;
 	align: center;
 	vertical-align: middle;
@@ -139,5 +139,5 @@ img.center {
 	font-size: 1em;
 	flex: 0 0 none;
     align-self: flex-end;
-	-webkit-animation: transparentBG 2s ease-in;
+	-webkit-animation: transparentBG 1.5s ease-in;
 }
