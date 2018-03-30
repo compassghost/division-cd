@@ -37,5 +37,14 @@
 			</div>
 			<div class="footer">Created by compassghost, 2017-2018 Source code <a href="https://github.com/compassghost/division-cd">here</a>.</div>
 		</div>
+		<audio autoplay id="myaudio">
+		<source src="audio/note.mp3" type="audio/mpeg" onloadstart="this.volume=0.2">
+			Your browser does not support the audio element.
+		</audio> 
+		
+		<script>
+		  var audio = document.getElementById("myaudio");
+		  audio.volume = 0.5;
+		</script>
 	</body>
 </html>
