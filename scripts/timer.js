@@ -153,6 +153,7 @@ function getNextDay(dayOfWeek) {
 function createUTCDate(year, month, day, hour) {
 	var date = new Date();
 	date.setUTCFullYear(year);
+	date.setUTCDate(1);
 	date.setUTCMonth(month - 1);
 	date.setUTCDate(day);
 	date.setUTCHours(hour);
@@ -170,6 +171,7 @@ function createEventTimer(itemName, timerId, startDay, endDay) {
 		createTimer(itemName, timerId, startDay, " activating in ", " activated");
 	}
 	else if(endDay.getTime() > new Date().getTime()) {
+		console.log(endDay);
 		createTimer(itemName, timerId, endDay, " is Active ", " has ended");
 	    document.getElementById(timerId).classList.add('glow');
 	}
