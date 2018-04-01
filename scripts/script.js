@@ -62,8 +62,8 @@ window.onload = function() {
 		createEventTimer.bind(null, 
 			"Ambush",
 			"ambush", 
-			createUTCDate(2018, 4, 3, 8), 
-			createUTCDate(2018, 4, 5, 7)));
+			createUTCDate(2018, 4, 1, 8), 
+			createUTCDate(2018, 4, 3, 7)));
 	deployTimer(
 		createEventTimer.bind(null, 
 			"Blackout",
@@ -80,6 +80,7 @@ window.onload = function() {
 			"E3 - Division 2 Reveal", 
 			"e3", 
 			createUTCDate(2018, 6, 12, 18)));
+
 };
 
 
