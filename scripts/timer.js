@@ -166,17 +166,17 @@ function createUTCDate(year, month, day, hour) {
 
 //create a timer timerId with name itemName that spans from startDay to endDay, and removes itself once it expires
 function createEventTimer(itemName, timerId, startDay, endDay) {
-	
 	if(startDay.getTime() > new Date().getTime()) {
 		createTimer(itemName, timerId, startDay, " activating in ", " activated");
 	}
 	else if(endDay.getTime() > new Date().getTime()) {
 		console.log(endDay);
-		createTimer(itemName, timerId, endDay, " is Active ", " has ended");
+		createTimer(itemName, timerId, endDay, " is Active ", " is offline ");
 	    document.getElementById(timerId).classList.add('glow');
 	}
 	else {
-	    document.getElementById(timerId).innerHTML = itemName + " not scheduled";
+	    document.getElementById(timerId).innerHTML = itemName + " is Offline";
+	    document.getElementById(timerId).classList.add('rogue');
 	    document.getElementById(timerId).classList.remove('glow');
 	}
 }
