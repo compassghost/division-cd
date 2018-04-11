@@ -55,8 +55,8 @@ window.onload = function() {
 	addEventTimer(
 			"Blackout",
 			"blackout", 
-			createUTCDate(2018, 4, 17, 8), 
-			createUTCDate(2018, 4, 24, 7));
+			createUTCDate(2018, 1, 1, 1), 
+			createUTCDate(2018, 1, 1, 1));
 	addTimer(
 			"Patch 1.8.1 and Maintenance", 
 			"patch", 
