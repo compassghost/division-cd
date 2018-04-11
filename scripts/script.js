@@ -60,8 +60,8 @@ window.onload = function() {
 	addTimer(
 			"Patch 1.8.1 and Maintenance", 
 			"patch", 
-			createUTCDate(2018, 4, 12, 9, 30),
-			createUTCDate(2018, 4, 12, 12, 30));
+			createUTCDate(2018, 4, 12, 7, 30),
+			createUTCDate(2018, 4, 12, 10, 30));
 	addTimer(
 			"E3 - Division 2 Reveal", 
 			"e3", 
