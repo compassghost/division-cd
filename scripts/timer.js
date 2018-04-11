@@ -9,9 +9,37 @@ function padTime(n) {
 	return pad(n, 2);
 }
 
+var keys = new Object();
+var timers = [];
+var deployedTimers = [];
+
+function addTimer(displayText, timerId, targetDay) {
+	var timer = createTimer.bind(null, 
+			displayText, 
+			timerId, 
+			targetDay);
+	keys[timerId]=timers.length;
+	timers.push(timer);
+}
+
+function addEventTimer(displayText, timerId, startDay, endDay) {
+	var timer = createEventTimer.bind(null, 
+			displayText, 
+			timerId, 
+			startDay,
+			endDay);
+	keys[timerId]=timers.length;
+	timers.push(timer);
+}
+
+function deployTimers() {
+	for(var i = 0; i < timers.length; i++) {
+		deployTimer(timers[i],1000);
+	}
+}
 //creates an auto-refreshing display for timer, default time is 1000ms
 function deployTimer(timer) {
-	setInterval(timer, 1000);
+	deployedTimers.push(setInterval(timer, 1000));
 }
 
 var lastCall = 0;
@@ -150,15 +178,15 @@ function getNextDay(dayOfWeek) {
 }
 
 //create a UTC date using YMDH
-function createUTCDate(year, month, day, hour) {
+function createUTCDate(year, month, day, hour, minutes, seconds) {
 	var date = new Date();
 	date.setUTCFullYear(year);
 	date.setUTCDate(1);
 	date.setUTCMonth(month - 1);
 	date.setUTCDate(day);
-	date.setUTCHours(hour);
-	date.setUTCMinutes(0);
-	date.setUTCSeconds(0);
+	date.setUTCHours(hour ? hour : 0);
+	date.setUTCMinutes(minutes ? minutes : 0);
+	date.setUTCSeconds(seconds ? seconds: 0);
 	date.setUTCMilliseconds(0);
 	
 	return date;
@@ -170,14 +198,14 @@ function createEventTimer(itemName, timerId, startDay, endDay) {
 		createTimer(itemName, timerId, startDay, " activating in ", " activated");
 	}
 	else if(endDay.getTime() > new Date().getTime()) {
-		console.log(endDay);
 		createTimer(itemName, timerId, endDay, " is Active ", " is offline ");
 	    document.getElementById(timerId).classList.add('glow');
 	}
 	else {
 	    document.getElementById(timerId).innerHTML = itemName + " is Offline";
+	    document.getElementById(timerId).setAttribute("text", itemName + " is Offline");
 	    document.getElementById(timerId).classList.add('rogue');
-	    document.getElementById(timerId).classList.remove('glow');
+		clearInterval(deployedTimers[keys[timerId]]);
 	}
 }
 

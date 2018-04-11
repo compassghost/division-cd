@@ -1,86 +1,72 @@
 window.onload = function() {
-	deployTimer(
-		createTimer.bind(null, 
+	addTimer(
 			"Daily Assignments", 
 			"dailies", 
-			getNextUTC.bind(null,)));
-	deployTimer(
-		createTimer.bind(null, 
+			getNextUTC.bind(null,));
+	addTimer(
 			"Weekly Assignments", 
 			"weeklies", 
-			getNextDay.bind(null,2)));
-	deployTimer(
-		createTimer.bind(null, 
+			getNextDay.bind(null,2));
+	addTimer(
 			"Weekly HVTs", 
 			"hvts", 
-			getNextDay.bind(null,5)));
-	deployTimer(
-		createTimer.bind(null, 
+			getNextDay.bind(null,5));
+	addTimer(
 			"Vendor Restock", 
 			"vendors", 
-			getNextDay.bind(null,6)));
-	deployTimer(
-		createTimer.bind(null, 
+			getNextDay.bind(null,6));
+	addTimer(
 			"Incursions and Legendary Missions", 
 			"incursions", 
-			getNextDay.bind(null,6)));
-	deployTimer(
-		createTimer.bind(null, 
+			getNextDay.bind(null,6));
+	addTimer(
 			"DZ Weekly Missions", 
 			"dzweeklies", 
-			getNextDay.bind(null,0)));
-	deployTimer(
-		createTimer.bind(null, 
+			getNextDay.bind(null,0));
+	addTimer(
 			"DZ Monthly Missions", 
 			"dzmonthlies", 
-			getNextMonth.bind(null)));
-	deployTimer(
-		createTimer.bind(null, 
+			getNextMonth.bind(null));
+	addTimer(
 			"Season Pass Supply Drop", 
 			"supplydrops", 
-			getNextSupply.bind(null)));
+			getNextSupply.bind(null));
 
-	deployTimer(
-		createEventTimer.bind(null, 
+	addEventTimer(
 			"Outbreak",
 			"outbreak", 
 			createUTCDate(2018, 3, 26, 13), 
-			createUTCDate(2018, 3, 28, 7)));
-	deployTimer(
-		createEventTimer.bind(null, 
+			createUTCDate(2018, 3, 28, 7));
+	addEventTimer(
 			"Assault",
 			"assault", 
 			createUTCDate(2018, 3, 28, 8), 
-			createUTCDate(2018, 3, 30, 7)));
-	deployTimer(
-		createEventTimer.bind(null, 
+			createUTCDate(2018, 3, 30, 7));
+	addEventTimer(
 			"Strike",
 			"strike", 
 			createUTCDate(2018, 3, 30, 8), 
-			createUTCDate(2018, 4, 1, 7)));
-	deployTimer(
-		createEventTimer.bind(null, 
+			createUTCDate(2018, 4, 1, 7));
+	addEventTimer(
 			"Ambush",
 			"ambush", 
 			createUTCDate(2018, 4, 1, 8), 
-			createUTCDate(2018, 4, 3, 7)));
-	deployTimer(
-		createEventTimer.bind(null, 
+			createUTCDate(2018, 4, 3, 7));
+	addEventTimer(
 			"Blackout",
 			"blackout", 
-			createUTCDate(2018, 3, 26, 13), 
-			createUTCDate(2018, 3, 28, 7)));
-	deployTimer(
-		createTimer.bind(null, 
-			"Patch 1.8.1", 
+			createUTCDate(2018, 4, 17, 8), 
+			createUTCDate(2018, 4, 24, 7));
+	addTimer(
+			"Patch 1.8.1 and Maintenance", 
 			"patch", 
-			createUTCDate(2018, 4, 12, 7)));
-	deployTimer(
-		createTimer.bind(null, 
+			createUTCDate(2018, 4, 12, 9, 30),
+			createUTCDate(2018, 4, 12, 12, 30));
+	addTimer(
 			"E3 - Division 2 Reveal", 
 			"e3", 
-			createUTCDate(2018, 6, 12, 18)));
-
+			createUTCDate(2018, 6, 12, 18));
+	deployTimers();
 };
 
 
