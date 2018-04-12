@@ -112,8 +112,31 @@ function createTimer(displayText, timerId, targetDay, suffix, noteSuffix) {
 
   var timeText = getFormattedTimer(days, hours, minutes, seconds)
   
-  document.getElementById(timerId).innerHTML = "<div>" + displayText + "</div><div>" + timeText + "</div>";
+  var thisTimer = document.getElementById(timerId);
+  
+  thisTimer.innerHTML = "<div>" + displayText + "</div><div>" + timeText + "</div>";
+  thisTimer.onmouseover = function() {
+	  thisTimer.innerHTML = "<div>" + displayText + "</div><div>" + formatDate(targetDay) + "</div>";
+  };
+}
 
+function formatDate(date) {
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes ;
+  
+  return day + ' ' + monthNames[monthIndex] + ' ' + year + ' ' + hours +':' + minutes;
 }
 
 function getFormattedTimer(days, hours, minutes, seconds) {
@@ -157,7 +180,7 @@ function getNextSupply() {
 		target.setUTCDate(15)
 		target.setUTCHours(0);
 		target.setMinutes(0);
-		target.setSeconds(1);
+		target.setSeconds(0);
 		target.setMilliseconds(0);
 	}
 	//next month

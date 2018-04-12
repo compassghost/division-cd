@@ -58,7 +58,7 @@ window.onload = function() {
 			createUTCDate(2018, 1, 1, 1), 
 			createUTCDate(2018, 1, 1, 1));
 	addTimer(
-			"Patch 1.8.1 and Maintenance", 
+			"Patch 1.8.1 Maintenance", 
 			"patch", 
 			createUTCDate(2018, 4, 12, 7, 30),
 			createUTCDate(2018, 4, 12, 10, 30));
