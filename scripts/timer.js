@@ -13,21 +13,24 @@ var keys = new Object();
 var timers = [];
 var deployedTimers = [];
 
-function addTimer(displayText, timerId, targetDay) {
-	var timer = createTimer.bind(null, 
-			displayText, 
-			timerId, 
-			targetDay);
-	keys[timerId]=timers.length;
-	timers.push(timer);
+function addTimer(displayText, timerId, startDay, endDay) {
+	if(endDay) {
+		addEventTimer(displayText, timerId, startDay, endDay);
+	}
+	else {
+		var timer = createTimer.bind(null, displayText, timerId, startDay);
+		keys[timerId]=timers.length;
+		timers.push(timer);
+	}
 }
 
-function addEventTimer(displayText, timerId, startDay, endDay) {
+function addEventTimer(displayText, timerId, startDay, endDay, behavior) {
 	var timer = createEventTimer.bind(null, 
 			displayText, 
 			timerId, 
 			startDay,
-			endDay);
+			endDay,
+			behavior);
 	keys[timerId]=timers.length;
 	timers.push(timer);
 }
@@ -216,18 +219,24 @@ function createUTCDate(year, month, day, hour, minutes, seconds) {
 }
 
 //create a timer timerId with name itemName that spans from startDay to endDay, and removes itself once it expires
-function createEventTimer(itemName, timerId, startDay, endDay) {
-	if(startDay.getTime() > new Date().getTime()) {
-		createTimer(itemName, timerId, startDay, " activating in ", " activated");
-	}
-	else if(endDay.getTime() > new Date().getTime()) {
-		createTimer(itemName, timerId, endDay, " is Active ", " is offline ");
-	    document.getElementById(timerId).classList.add('glow');
+function createEventTimer(itemName, timerId, startDay, endDay, behavior) {
+	if(!behavior) {
+		defaultEventTimerBehavior(itemName, timerId, startDay, endDay);
 	}
 	else {
-	    document.getElementById(timerId).innerHTML = itemName + " is Offline";
-	    document.getElementById(timerId).setAttribute("text", itemName + " is Offline");
-	    document.getElementById(timerId).classList.add('rogue');
+		behavior(itemName, timerId, startDay, endDay);
+	}
+}
+
+function defaultEventTimerBehavior(itemName, timerId, startDay, endDay) {
+	if(startDay.getTime() > new Date().getTime()) {
+		createTimer(itemName, timerId, startDay, " starting in", " has started");
+	}
+	else if(endDay.getTime() > new Date().getTime()) {
+		createTimer(itemName, timerId, endDay, " has started", " has ended");
+	}
+	else {
+	    document.getElementById(timerId).outerHTML="";
 		clearInterval(deployedTimers[keys[timerId]]);
 	}
 }

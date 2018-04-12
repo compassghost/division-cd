@@ -36,28 +36,33 @@ window.onload = function() {
 			"Outbreak",
 			"outbreak", 
 			createUTCDate(2018, 3, 26, 13), 
-			createUTCDate(2018, 3, 28, 7));
+			createUTCDate(2018, 3, 28, 7),
+			customEventTimerBehavior);
 	addEventTimer(
 			"Assault",
 			"assault", 
 			createUTCDate(2018, 3, 28, 8), 
-			createUTCDate(2018, 3, 30, 7));
+			createUTCDate(2018, 3, 30, 7),
+			customEventTimerBehavior);
 	addEventTimer(
 			"Strike",
 			"strike", 
 			createUTCDate(2018, 3, 30, 8), 
-			createUTCDate(2018, 4, 1, 7));
+			createUTCDate(2018, 4, 1, 7),
+			customEventTimerBehavior);
 	addEventTimer(
 			"Ambush",
 			"ambush", 
 			createUTCDate(2018, 4, 1, 8), 
-			createUTCDate(2018, 4, 3, 7));
+			createUTCDate(2018, 4, 3, 7),
+			customEventTimerBehavior);
 	addEventTimer(
 			"Blackout",
 			"blackout", 
 			createUTCDate(2018, 1, 1, 1), 
-			createUTCDate(2018, 1, 1, 1));
-	addTimer(
+			createUTCDate(2018, 1, 1, 1),
+			customEventTimerBehavior);
+	addEventTimer(
 			"Patch 1.8.1 Maintenance", 
 			"patch", 
 			createUTCDate(2018, 4, 12, 7, 30),
@@ -99,3 +104,19 @@ function playNotificationSound() {
     audio.play();
 }
 
+function customEventTimerBehavior(itemName, timerId, startDay, endDay) {
+	if(startDay.getTime() > new Date().getTime()) {
+		createTimer(itemName, timerId, startDay, " activating in ", " activated");
+	}
+	else if(endDay.getTime() > new Date().getTime()) {
+		createTimer(itemName, timerId, endDay, " is Active ", " is offline ");
+	    document.getElementById(timerId).classList.add('glow');
+	}
+	else {
+	    document.getElementById(timerId).innerHTML = itemName + " is Offline";
+	    document.getElementById(timerId).setAttribute("text", itemName + " is Offline");
+	    document.getElementById(timerId).classList.remove('glow');
+	    document.getElementById(timerId).classList.add('rogue');
+		clearInterval(deployedTimers[keys[timerId]]);
+	}	
+}
