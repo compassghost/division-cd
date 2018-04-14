@@ -124,42 +124,9 @@ img.center {
     margin: 0 auto;
 }
 
-
-.flex_base > div {
-	display: flex;
-	flex-wrap: no-wrap;
-	justify-content: space-between;
+.timer > div {
 	margin: 0.15em;
 	background-color: rgb(255,165,0,.02);
-	text-align: left;
-
-}
-.flex_base > div > div:last-child {
-	text-align: right;
-}
-
-.flex_base > div > div > span.normal {
-	display: inline;
-}
-.flex_base > div:hover > div > span.normal {
-	display: none;
-}
-.flex_base > div > div > span.mouseover {
-	display: none;
-}
-.flex_base > div:hover > div > span.mouseover {
-	display: inline;
-}
-
-.flex_base > div > div {
-	flex-direction: row;
-	flex: 1 1 auto;
-}
-
-
-.flex_base > div > div {
-	flex-direction: row;
-	flex: 1 1 auto;
 }
 
 .footer {
