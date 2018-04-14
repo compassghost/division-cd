@@ -37,12 +37,12 @@ function addEventTimer(displayText, timerId, startDay, endDay, behavior) {
 
 function deployTimers() {
 	for(var i = 0; i < timers.length; i++) {
-		deployTimer(timers[i],1000);
+		deployTimer(timers[i], 1000);
 	}
 }
 //creates an auto-refreshing display for timer, default time is 1000ms
-function deployTimer(timer) {
-	deployedTimers.push(setInterval(timer, 1000));
+function deployTimer(timer , offset) {
+	deployedTimers.push(setInterval(timer, offset));
 }
 
 var lastCall = 0;
@@ -117,10 +117,8 @@ function createTimer(displayText, timerId, targetDay, suffix, noteSuffix) {
   
   var thisTimer = document.getElementById(timerId);
   
-  thisTimer.innerHTML = "<div>" + displayText + "</div><div>" + timeText + "</div>";
-  thisTimer.onmouseover = function() {
-	  thisTimer.innerHTML = "<div>" + displayText + "</div><div>" + formatDate(targetDay) + "</div>";
-  };
+  thisTimer.innerHTML = "<div>" + displayText + "</div><div><span class='normal'>" + timeText + "</span><span class='mouseover'>" + formatDate(targetDay) + "</span></div>";
+
 }
 
 function formatDate(date) {
