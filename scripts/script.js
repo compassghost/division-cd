@@ -35,38 +35,45 @@ window.onload = function() {
 	addEventTimer(
 			"Outbreak",
 			"outbreak", 
-			createUTCDate(2018, 3, 26, 13), 
-			createUTCDate(2018, 3, 28, 7),
+			createUTCDate(2018, 6, 24, 8), 
+			createUTCDate(2018, 6, 1, 8),
 			customEventTimerBehavior);
 	addEventTimer(
 			"Assault",
 			"assault", 
-			createUTCDate(2018, 3, 28, 8), 
-			createUTCDate(2018, 3, 30, 7),
+			createUTCDate(2018, 7, 24, 8), 
+			createUTCDate(2018, 7, 1, 8),
 			customEventTimerBehavior);
 	addEventTimer(
 			"Strike",
 			"strike", 
-			createUTCDate(2018, 3, 30, 8), 
-			createUTCDate(2018, 4, 1, 7),
+			createUTCDate(2018, 8, 24, 8), 
+			createUTCDate(2018, 8, 1, 8),
 			customEventTimerBehavior);
 	addEventTimer(
 			"Ambush",
 			"ambush", 
-			createUTCDate(2018, 4, 1, 8), 
-			createUTCDate(2018, 4, 3, 7),
+			createUTCDate(2018, 9, 24, 8), 
+			createUTCDate(2018, 9, 1, 8),
 			customEventTimerBehavior);
 	addEventTimer(
 			"Blackout",
 			"blackout", 
-			createUTCDate(2018, 1, 1, 1), 
-			createUTCDate(2018, 1, 1, 1),
+			createUTCDate(2018, 4, 24, 8), 
+			createUTCDate(2018, 5, 1, 7),
 			customEventTimerBehavior);
 	addEventTimer(
-			"Patch 1.8.1 Maintenance", 
+			"Onslaught",
+			"onslaught", 
+			createUTCDate(2018, 5, 1, 8), 
+			createUTCDate(2018, 5, 1, 8),
+			customEventTimerBehavior);
+	addEventTimer(
+			"Patch 1.8.2", 
 			"patch", 
-			createUTCDate(2018, 4, 12, 7, 30),
-			createUTCDate(2018, 4, 12, 10, 30));
+			createUTCDate(2018, 6, 1, 7, 30),
+			createUTCDate(2018, 6, 1, 10, 30),
+			customEventTimerBehavior);
 	addTimer(
 			"E3 - Division 2 Reveal", 
 			"e3", 
@@ -106,7 +113,7 @@ function playNotificationSound() {
 
 function customEventTimerBehavior(itemName, timerId, startDay, endDay) {
 	if(startDay.getTime() > new Date().getTime()) {
-		createTimer(itemName, timerId, startDay, " activating in ", " activated");
+		createTimer(itemName, timerId, startDay, " Estimate ", " activated");
 	}
 	else if(endDay.getTime() > new Date().getTime()) {
 		createTimer(itemName, timerId, endDay, " is Active ", " is offline ");

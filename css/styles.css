@@ -139,6 +139,10 @@ img.center {
 	-webkit-animation: transparentBG 1.5s ease-in;
 }
 
+.tip {
+	font-size: 0.7em;
+}
+
 .btn {
   -webkit-border-radius: 5;
   -moz-border-radius: 5;
