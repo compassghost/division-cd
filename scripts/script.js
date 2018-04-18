@@ -35,25 +35,25 @@ window.onload = function() {
 	addEventTimer(
 			"Outbreak",
 			"outbreak", 
-			createUTCDate(2018, 6, 24, 8), 
+			createUTCDate(2018, 6, 19, 8), 
 			createUTCDate(2018, 6, 1, 8),
 			customEventTimerBehavior);
 	addEventTimer(
 			"Assault",
 			"assault", 
-			createUTCDate(2018, 7, 24, 8), 
+			createUTCDate(2018, 7, 17, 8), 
 			createUTCDate(2018, 7, 1, 8),
 			customEventTimerBehavior);
 	addEventTimer(
 			"Strike",
 			"strike", 
-			createUTCDate(2018, 8, 24, 8), 
+			createUTCDate(2018, 8, 14, 8), 
 			createUTCDate(2018, 8, 1, 8),
 			customEventTimerBehavior);
 	addEventTimer(
 			"Ambush",
 			"ambush", 
-			createUTCDate(2018, 9, 24, 8), 
+			createUTCDate(2018, 9, 11, 8), 
 			createUTCDate(2018, 9, 1, 8),
 			customEventTimerBehavior);
 	addEventTimer(
@@ -65,8 +65,8 @@ window.onload = function() {
 	addEventTimer(
 			"Onslaught",
 			"onslaught", 
-			createUTCDate(2018, 5, 1, 8), 
-			createUTCDate(2018, 5, 1, 8),
+			createUTCDate(2018, 5, 22, 8), 
+			createUTCDate(2018, 5, 22, 8),
 			customEventTimerBehavior);
 	addEventTimer(
 			"Patch 1.8.2", 
