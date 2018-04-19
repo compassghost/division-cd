@@ -5,6 +5,7 @@ html {
 
 html > * {
 	font-family: 'Share Tech Mono', sans-serif;
+	font-size: 1.2em;
 }
 
 html, body {
@@ -148,7 +149,7 @@ img.center {
   -moz-border-radius: 5;
   border-radius: 5px;
   color: orange;
-  font-size: 20px;
+  font-size: 1.2em;
   background: rgba(255, 165, 0, 0.1);
   padding: 10px 20px 10px 20px;
   border: solid orange 0px;
