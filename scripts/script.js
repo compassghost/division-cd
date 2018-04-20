@@ -59,8 +59,8 @@ window.onload = function() {
 	addEventTimer(
 			"Blackout",
 			"blackout", 
-			createUTCDate(2018, 4, 24, 8), 
-			createUTCDate(2018, 5, 1, 7),
+			createUTCDate(2018, 4, 23, 8), 
+			createUTCDate(2018, 4, 30, 7),
 			customEventTimerBehavior);
 	addEventTimer(
 			"Onslaught",
