@@ -35,45 +35,45 @@ window.onload = function() {
 	addEventTimer(
 			"Outbreak",
 			"outbreak", 
-			createUTCDate(2018, 6, 19, 8), 
-			createUTCDate(2018, 6, 1, 8),
-			customEventTimerBehavior);
+			createUTCDate(2018, 6, 19, 12), 
+			createUTCDate(2018, 6, 1, 11),
+			customEventTimerBehaviorEstimate);
 	addEventTimer(
 			"Assault",
 			"assault", 
-			createUTCDate(2018, 7, 17, 8), 
-			createUTCDate(2018, 7, 1, 8),
-			customEventTimerBehavior);
+			createUTCDate(2018, 7, 17, 12), 
+			createUTCDate(2018, 7, 1, 11),
+			customEventTimerBehaviorEstimate);
 	addEventTimer(
 			"Strike",
 			"strike", 
-			createUTCDate(2018, 8, 14, 8), 
-			createUTCDate(2018, 8, 1, 8),
-			customEventTimerBehavior);
+			createUTCDate(2018, 8, 14, 12), 
+			createUTCDate(2018, 8, 1, 11),
+			customEventTimerBehaviorEstimate);
 	addEventTimer(
 			"Ambush",
 			"ambush", 
-			createUTCDate(2018, 9, 11, 8), 
-			createUTCDate(2018, 9, 1, 8),
-			customEventTimerBehavior);
+			createUTCDate(2018, 9, 11, 12), 
+			createUTCDate(2018, 9, 1, 11),
+			customEventTimerBehaviorEstimate);
 	addEventTimer(
 			"Blackout",
 			"blackout", 
-			createUTCDate(2018, 4, 23, 8), 
-			createUTCDate(2018, 4, 30, 7),
+			createUTCDate(2018, 4, 23, 12), 
+			createUTCDate(2018, 4, 30, 11),
 			customEventTimerBehavior);
 	addEventTimer(
 			"Onslaught",
 			"onslaught", 
-			createUTCDate(2018, 5, 22, 8), 
-			createUTCDate(2018, 5, 22, 8),
-			customEventTimerBehavior);
+			createUTCDate(2018, 5, 22, 12), 
+			createUTCDate(2018, 5, 22, 11),
+			customEventTimerBehaviorEstimate);
 	addEventTimer(
 			"Patch 1.8.2", 
 			"patch", 
 			createUTCDate(2018, 6, 1, 7, 30),
 			createUTCDate(2018, 6, 1, 10, 30),
-			customEventTimerBehavior);
+			customEventTimerBehaviorEstimate);
 	addTimer(
 			"E3 - Division 2 Reveal", 
 			"e3", 
@@ -112,6 +112,23 @@ function playNotificationSound() {
 }
 
 function customEventTimerBehavior(itemName, timerId, startDay, endDay) {
+	if(startDay.getTime() > new Date().getTime()) {
+		createTimer(itemName, timerId, startDay, "", " activated");
+	}
+	else if(endDay.getTime() > new Date().getTime()) {
+		createTimer(itemName, timerId, endDay, " is Active ", " is offline ");
+	    document.getElementById(timerId).classList.add('glow');
+	}
+	else {
+	    document.getElementById(timerId).innerHTML = itemName + " is Offline";
+	    document.getElementById(timerId).setAttribute("text", itemName + " is Offline");
+	    document.getElementById(timerId).classList.remove('glow');
+	    document.getElementById(timerId).classList.add('rogue');
+		clearInterval(deployedTimers[keys[timerId]]);
+	}	
+}
+
+function customEventTimerBehaviorEstimate(itemName, timerId, startDay, endDay) {
 	if(startDay.getTime() > new Date().getTime()) {
 		createTimer(itemName, timerId, startDay, " Estimate ", " activated");
 	}
