@@ -35,38 +35,38 @@ window.onload = function() {
 	addEventTimer(
 			"Outbreak",
 			"outbreak", 
-			createUTCDate(2018, 6, 19, 12), 
-			createUTCDate(2018, 6, 1, 11),
+			createUTCDate(2018, 6, 19, 8),
+			createUTCDate(2018, 6, 1, 7),
 			customEventTimerBehaviorEstimate);
 	addEventTimer(
 			"Assault",
 			"assault", 
-			createUTCDate(2018, 7, 17, 12), 
-			createUTCDate(2018, 7, 1, 11),
+			createUTCDate(2018, 7, 17, 8),
+			createUTCDate(2018, 7, 1, 7),
 			customEventTimerBehaviorEstimate);
 	addEventTimer(
 			"Strike",
 			"strike", 
-			createUTCDate(2018, 8, 14, 12), 
-			createUTCDate(2018, 8, 1, 11),
+			createUTCDate(2018, 8, 14, 8),
+			createUTCDate(2018, 8, 1, 7),
 			customEventTimerBehaviorEstimate);
 	addEventTimer(
 			"Ambush",
 			"ambush", 
-			createUTCDate(2018, 9, 11, 12), 
-			createUTCDate(2018, 9, 1, 11),
+			createUTCDate(2018, 9, 11, 8),
+			createUTCDate(2018, 9, 1, 7),
 			customEventTimerBehaviorEstimate);
 	addEventTimer(
 			"Blackout",
 			"blackout", 
-			createUTCDate(2018, 4, 23, 12), 
-			createUTCDate(2018, 4, 30, 11),
+			createUTCDate(2018, 4, 23, 8),
+			createUTCDate(2018, 4, 30, 7),
 			customEventTimerBehavior);
 	addEventTimer(
 			"Onslaught",
 			"onslaught", 
-			createUTCDate(2018, 5, 22, 12), 
-			createUTCDate(2018, 5, 22, 11),
+			createUTCDate(2018, 5, 22, 8),
+			createUTCDate(2018, 5, 22, 7),
 			customEventTimerBehaviorEstimate);
 	addEventTimer(
 			"Patch 1.8.2", 
