@@ -60,13 +60,13 @@ window.onload = function() {
 			"Blackout",
 			"blackout", 
 			createUTCDate(2018, 4, 23, 8),
-			createUTCDate(2018, 5, 7, 7),
+			createUTCDate(2018, 5, 7, 8),
 			customEventTimerBehavior);
 	addEventTimer(
 			"Onslaught",
 			"onslaught", 
 			createUTCDate(2018, 5, 22, 8),
-			createUTCDate(2018, 5, 22, 7),
+			createUTCDate(2018, 5, 29, 7),
 			customEventTimerBehaviorEstimate);
 	addEventTimer(
 			"Patch 1.8.2", 
@@ -79,6 +79,9 @@ window.onload = function() {
 			"e3", 
 			createUTCDate(2018, 6, 12, 18));
 	deployTimers();
+	
+	wireTrigger(playNotificationSound);
+
 };
 
 
@@ -110,6 +113,7 @@ function playNotificationSound() {
 	audio.volume = 0.75;
     audio.play();
 }
+
 
 function customEventTimerBehavior(itemName, timerId, startDay, endDay) {
 	if(startDay.getTime() > new Date().getTime()) {
