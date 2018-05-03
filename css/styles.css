@@ -134,7 +134,7 @@ img.center {
     color: #000;
 	text-shadow: 1px 0px #000, -1px 0px #000, 0px 1px #000, 0px -1px #000;
 	color: darkorange;
-	font-size: 1em;
+	font-size: 0.8em;
 	flex: 0 0 none;
     align-self: flex-end;
 	-webkit-animation: transparentBG 1.5s ease-in;

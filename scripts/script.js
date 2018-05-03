@@ -62,12 +62,12 @@ window.onload = function() {
 			createUTCDate(2018, 4, 23, 8),
 			createUTCDate(2018, 5, 7, 8),
 			customEventTimerBehavior);
-	addEventTimer(
+	/*addEventTimer(
 			"Onslaught",
 			"onslaught", 
 			createUTCDate(2018, 5, 22, 8),
 			createUTCDate(2018, 5, 29, 7),
-			customEventTimerBehaviorEstimate);
+			customEventTimerBehaviorEstimate);*/
 	addEventTimer(
 			"Patch 1.8.2", 
 			"patch", 
