@@ -32,7 +32,7 @@ window.onload = function() {
 			"supplydrops", 
 			getNextSupply.bind(null));
 
-	addEventTimer(
+	/*addEventTimer(
 			"Outbreak",
 			"outbreak", 
 			createUTCDate(2018, 6, 19, 8),
@@ -61,13 +61,13 @@ window.onload = function() {
 			"blackout", 
 			createUTCDate(2018, 4, 23, 8),
 			createUTCDate(2018, 5, 7, 8),
-			customEventTimerBehavior);
-	/*addEventTimer(
+			customEventTimerBehavior);*/
+	addEventTimer(
 			"Onslaught",
 			"onslaught", 
-			createUTCDate(2018, 5, 22, 8),
-			createUTCDate(2018, 5, 29, 7),
-			customEventTimerBehaviorEstimate);*/
+			createUTCDate(2018, 5, 21, 8),
+			createUTCDate(2018, 5, 28, 7),
+			customEventTimerBehavior);
 	addEventTimer(
 			"Patch 1.8.2", 
 			"patch", 
