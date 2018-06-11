@@ -55,13 +55,13 @@ window.onload = function() {
 			"ambush", 
 			createUTCDate(2018, 9, 11, 8),
 			createUTCDate(2018, 9, 1, 7),
-			customEventTimerBehaviorEstimate);
+			customEventTimerBehaviorEstimate);*/
 	addEventTimer(
 			"Blackout",
 			"blackout", 
 			createUTCDate(2018, 4, 23, 8),
 			createUTCDate(2018, 5, 7, 8),
-			customEventTimerBehavior);*/
+			customEventTimerBehavior);
 	addEventTimer(
 			"Onslaught",
 			"onslaught", 
@@ -72,12 +72,11 @@ window.onload = function() {
 			"Patch 1.8.2", 
 			"patch", 
 			createUTCDate(2018, 6, 14, 1, 30),
-			createUTCDate(2018, 6, 14, 10, 30),
-			customEventTimerBehaviorEstimate);
+			createUTCDate(2018, 6, 14, 10, 30));
 	addTimer(
-			"E3 - Division 2 Reveal", 
-			"e3", 
-			createUTCDate(2018, 6, 12, 18));
+			"Division 2 Release", 
+			"release", 
+			createUTCDate(2019, 3, 15, 0));
 	deployTimers();
 	
 	wireTrigger(playNotificationSound);
