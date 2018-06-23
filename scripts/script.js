@@ -32,12 +32,12 @@ window.onload = function() {
 			"supplydrops", 
 			getNextSupply.bind(null));
 
-	/*addEventTimer(
+	addEventTimer(
 			"Outbreak",
 			"outbreak", 
-			createUTCDate(2018, 6, 19, 8),
-			createUTCDate(2018, 6, 1, 7),
-			customEventTimerBehaviorEstimate);
+			createUTCDate(2018, 6, 25, 8),
+			createUTCDate(2018, 6, 31, 7),
+			customEventTimerBehavior);/*
 	addEventTimer(
 			"Assault",
 			"assault", 
@@ -59,7 +59,7 @@ window.onload = function() {
 	addEventTimer(
 			"Blackout",
 			"blackout", 
-			createUTCDate(2018, 4, 23, 8),
+			createUTCDate(2018, 4, 26, 8),
 			createUTCDate(2018, 5, 7, 8),
 			customEventTimerBehavior);
 	addEventTimer(
