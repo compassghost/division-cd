@@ -69,10 +69,10 @@ window.onload = function() {
 			createUTCDate(2018, 5, 28, 7),
 			customEventTimerBehavior);
 	addEventTimer(
-			"Patch 1.8.2", 
-			"patch", 
-			createUTCDate(2018, 6, 14, 1, 30),
-			createUTCDate(2018, 6, 14, 10, 30));
+			"2x Prof Caches", 
+			"cache", 
+			createUTCDate(2018, 7, 6, 8),
+			createUTCDate(2018, 7, 9, 8, 0));
 	addTimer(
 			"Division 2 Release", 
 			"release", 
