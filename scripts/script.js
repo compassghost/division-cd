@@ -37,13 +37,13 @@ window.onload = function() {
 			"outbreak", 
 			createUTCDate(2018, 6, 25, 8),
 			createUTCDate(2018, 6, 31, 7),
-			customEventTimerBehavior);/*
+			customEventTimerBehavior);
 	addEventTimer(
 			"Assault",
 			"assault", 
-			createUTCDate(2018, 7, 17, 8),
-			createUTCDate(2018, 7, 1, 7),
-			customEventTimerBehaviorEstimate);
+			createUTCDate(2018, 7, 30, 8),
+			createUTCDate(2018, 8, 6, 8),
+			customEventTimerBehavior);/*
 	addEventTimer(
 			"Strike",
 			"strike", 
